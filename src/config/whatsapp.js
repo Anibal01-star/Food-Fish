@@ -9,7 +9,7 @@
  * pengiriman ke nomor fiktif/palsu.
  */
 
-export const WHATSAPP_BUSINESS_NUMBER = "GANTI_DENGAN_NOMOR_BISNIS";
+export const WHATSAPP_BUSINESS_NUMBER = "6287796397461";
 
 // Nama bisnis & identitas resmi
 export const BUSINESS_INFO = {
@@ -17,7 +17,7 @@ export const BUSINESS_INFO = {
   tagline: "Ikan Berbumbu, Praktis Tinggal Masak",
   serviceArea: "Malang Raya (Kota Malang, Kab. Malang, Kota Batu)",
   operationalHours: "Setiap Hari, 07:00 - 17:00 WIB",
-  email: "kontak@foodfish.id",
+  email: "radikanabil8@gmail.com",
   address: "Area Layanan: Malang Raya, Jawa Timur, Indonesia",
   instagram: "@foodfish.malang",
   notes: "Katalog produk dan harga merupakan data simulasi contoh. Silakan lengkapi nomor WhatsApp bisnis dan data resmi sebelum peluncuran komersial."
