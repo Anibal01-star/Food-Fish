@@ -1,26 +1,22 @@
 /**
- * KONFIGURASI WHATSAPP FOODFISH
+ * KONFIGURASI WHATSAPP & IDENTITAS BISNIS — MARINASI PAK ABIL
  *
- * Ubah nomor di bawah ini dengan nomor WhatsApp resmi bisnis FoodFish.
- * Format nomor internasional Indonesia tanpa tanda plus atau strip: contoh "6281234567890".
- * 
- * Nilai default adalah placeholder 'GANTI_DENGAN_NOMOR_BISNIS'.
- * Sistem akan mendeteksi jika nomor masih placeholder dan menampilkan panduan serta mencegah
- * pengiriman ke nomor fiktif/palsu.
+ * Nomor WhatsApp resmi bisnis Marinasi Pak ABIL di Malang Raya.
+ * Format internasional tanpa tanda plus atau strip: "6287796397461".
  */
 
 export const WHATSAPP_BUSINESS_NUMBER = "6287796397461";
 
 // Nama bisnis & identitas resmi
 export const BUSINESS_INFO = {
-  name: "FoodFish",
-  tagline: "Ikan Berbumbu, Praktis Tinggal Masak",
-  serviceArea: "Malang Raya (Kota Malang, Kab. Malang, Kota Batu)",
+  name: "Marinasi Pak ABIL",
+  tagline: "Ikan Marinasi Siap Masak Malang",
+  serviceArea: "Malang Raya (Kota Malang, Kab. Malang, Kota Batu), Jawa Timur",
   operationalHours: "Setiap Hari, 07:00 - 17:00 WIB",
   email: "radikanabil8@gmail.com",
-  address: "Area Layanan: Malang Raya, Jawa Timur, Indonesia",
-  instagram: "@foodfish.malang",
-  notes: "Katalog produk dan harga merupakan data simulasi contoh. Silakan lengkapi nomor WhatsApp bisnis dan data resmi sebelum peluncuran komersial."
+  address: "Area Layanan Pengiriman: Malang Raya, Jawa Timur, Indonesia",
+  instagram: "@marinasipakabil",
+  notes: "Pemesanan dilayani melalui keranjang belanja website dan konfirmasi pesanan langsung via WhatsApp untuk area Malang Raya."
 };
 
 /**
@@ -31,7 +27,6 @@ export const isWhatsAppConfigured = () => {
   if (WHATSAPP_BUSINESS_NUMBER.includes("GANTI_DENGAN") || WHATSAPP_BUSINESS_NUMBER === "PLACEHOLDER") {
     return false;
   }
-  // Cek apakah angka dan panjang minimal wajar (misal minimal 9 digit)
   const cleanNumber = WHATSAPP_BUSINESS_NUMBER.replace(/\D/g, "");
   return cleanNumber.length >= 9;
 };

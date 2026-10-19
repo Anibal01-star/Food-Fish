@@ -25,15 +25,20 @@ export const ProductCard = ({ product }) => {
     }, 600);
   };
 
+  const imageAlt = product.alt || `Ikan ${product.name} siap masak dari Marinasi Pak ABIL Malang`;
+
   return (
     <article className="product-card">
       <div className="product-image-container">
-        <Link to={`/produk/${product.slug}`} tabIndex={-1}>
+        <Link to={`/produk/${product.slug}`} tabIndex={-1} aria-label={product.name}>
           <img
             src={imageError ? fallbackImage : product.image}
-            alt={product.name}
+            alt={imageAlt}
             className="product-image"
             loading="lazy"
+            width="320"
+            height="220"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={() => setImageError(true)}
           />
         </Link>
@@ -77,7 +82,8 @@ export const ProductCard = ({ product }) => {
             <Link
               to={`/produk/${product.slug}`}
               className="btn btn-secondary btn-icon-only"
-              title="Lihat Rincian Produk"
+              title={`Lihat detail ${product.name}`}
+              aria-label={`Lihat detail ${product.name}`}
             >
               <Eye size={18} />
             </Link>
@@ -87,9 +93,10 @@ export const ProductCard = ({ product }) => {
               className="btn btn-primary btn-icon-only"
               onClick={handleAddToCart}
               disabled={!product.inStock || isAdding}
-              title={product.inStock ? "Tambah ke Keranjang" : "Stok sedang habis"}
+              title={product.inStock ? `Tambah ${product.name} ke Keranjang` : "Stok sedang habis"}
+              aria-label={product.inStock ? `Tambah ${product.name} ke Keranjang` : "Stok sedang habis"}
               style={{
-                backgroundColor: isAdding ? '#25D366' : (!product.inStock ? '#CBD5E1' : 'var(--color-ocean-blue)')
+                backgroundColor: isAdding ? 'var(--color-success)' : (!product.inStock ? '#D1BFB0' : 'var(--color-primary)')
               }}
             >
               {isAdding ? <Check size={18} /> : <ShoppingBag size={18} />}

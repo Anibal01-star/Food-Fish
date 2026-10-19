@@ -10,7 +10,7 @@ export const WhatsAppNotice = ({ compact = false }) => {
     if (compact) return null;
     return (
       <div className="notice-box info" style={{ marginBottom: '1.5rem' }}>
-        <CheckCircle2 size={20} color="#1877A8" className="notice-icon" />
+        <CheckCircle2 size={20} color="var(--color-primary)" className="notice-icon" />
         <div className="notice-content">
           <div className="notice-title">WhatsApp Bisnis Resmi Terhubung</div>
           <div>Nomor tujuan pemesanan: <strong>+{WHATSAPP_BUSINESS_NUMBER}</strong></div>
@@ -21,7 +21,7 @@ export const WhatsAppNotice = ({ compact = false }) => {
 
   return (
     <div className={`notice-box warning ${compact ? 'compact' : ''}`} style={{ marginBottom: '1.5rem' }}>
-      <AlertTriangle size={20} color="#F28C52" className="notice-icon" />
+      <AlertTriangle size={20} color="var(--color-accent)" className="notice-icon" />
       <div className="notice-content" style={{ flex: 1 }}>
         <div className="notice-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span>Konfigurasi WhatsApp Bisnis (Status: Placeholder)</span>

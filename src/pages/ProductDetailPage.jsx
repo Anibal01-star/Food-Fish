@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   ChevronRight, 
@@ -35,11 +35,50 @@ export const ProductDetailPage = () => {
 
   const fallbackImage = "/images/gurame-bumbu-kuning.png";
 
+  // Dynamic SEO title & meta description update
+  useEffect(() => {
+    if (product) {
+      const title = `${product.name} – Ikan Marinasi Malang | Marinasi Pak ABIL`;
+      const description = `${product.shortDescription || product.description} Pesan sekarang dari Marinasi Pak ABIL untuk area Malang Raya via website & WhatsApp.`;
+      const productUrl = `https://foodfish-malang.vercel.app/produk/${product.slug}`;
+
+      document.title = title;
+
+      const updateMetaTag = (selector, attribute, value, content) => {
+        let tag = document.querySelector(selector);
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute(attribute, value);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', content);
+      };
+
+      updateMetaTag('meta[name="description"]', 'name', 'description', description);
+      updateMetaTag('meta[property="og:title"]', 'property', 'og:title', title);
+      updateMetaTag('meta[property="og:description"]', 'property', 'og:description', description);
+      updateMetaTag('meta[property="og:url"]', 'property', 'og:url', productUrl);
+      updateMetaTag('meta[property="og:image"]', 'property', 'og:image', `https://foodfish-malang.vercel.app${product.image}`);
+      updateMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
+      updateMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+      updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', `https://foodfish-malang.vercel.app${product.image}`);
+
+      const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', productUrl);
+      if (!document.head.contains(canonicalLink)) {
+        document.head.appendChild(canonicalLink);
+      }
+
+      window.scrollTo(0, 0);
+    }
+  }, [product, slug]);
+
   if (!product) {
     return (
       <div className="product-detail-section" style={{ textAlign: 'center', padding: '6rem 1.5rem' }}>
         <div className="empty-state">
-          <AlertTriangle size={54} color="#F28C52" style={{ margin: '0 auto 1rem' }} />
+          <AlertTriangle size={54} color="#F28C28" style={{ margin: '0 auto 1rem' }} />
           <h2 style={{ fontSize: '1.8rem', marginBottom: '0.75rem', color: 'var(--color-deep-navy)' }}>
             Produk Tidak Ditemukan
           </h2>
@@ -74,14 +113,43 @@ export const ProductDetailPage = () => {
   const directWaMessage = buildSingleProductWhatsAppMessage(product, quantity);
   const directWaUrl = createWhatsAppUrl(directWaMessage);
 
+  // Structured Data JSON-LD
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.name,
+    "image": `https://foodfish-malang.vercel.app${product.image}`,
+    "description": product.description,
+    "brand": {
+      "@type": "Brand",
+      "name": "Marinasi Pak ABIL"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://foodfish-malang.vercel.app/produk/${product.slug}`,
+      "priceCurrency": "IDR",
+      "price": product.price,
+      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  };
+
+  const productAlt = product.alt || `Ikan ${product.name} siap masak dari Marinasi Pak ABIL Malang`;
+
   return (
     <div className="product-detail-page">
+      {/* Inject Structured Data for Googlebot */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
       <div className="product-detail-section">
         {/* Breadcrumb Navigation */}
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <Link to="/">Beranda</Link>
           <ChevronRight size={14} />
-          <Link to="/produk">Katalog</Link>
+          <Link to="/produk">Katalog Ikan</Link>
           <ChevronRight size={14} />
           <Link to={`/produk?kategori=${product.category}`}>{product.categoryName}</Link>
           <ChevronRight size={14} />
@@ -94,8 +162,12 @@ export const ProductDetailPage = () => {
           <div className="detail-image-box">
             <img
               src={imageError ? fallbackImage : product.image}
-              alt={product.name}
+              alt={productAlt}
               className="detail-main-image"
+              loading="eager"
+              fetchPriority="high"
+              width="500"
+              height="380"
               onError={() => setImageError(true)}
             />
             {/* Badges */}
@@ -112,11 +184,11 @@ export const ProductDetailPage = () => {
               <span style={{
                 fontSize: '0.82rem',
                 fontWeight: 700,
-                color: 'var(--color-ocean-blue)',
+                color: 'var(--color-primary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
               }}>
-                FoodFish Fresh Marinade • {product.categoryName}
+                Marinasi Pak ABIL • {product.categoryName}
               </span>
               <h1 className="detail-title">{product.name}</h1>
               

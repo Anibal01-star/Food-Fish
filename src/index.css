@@ -20,7 +20,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #FAFAFA;
+  background-color: var(--color-bg);
   color: var(--color-text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -246,9 +246,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Promo Banner (No Fabricated Discount) */
+/* Promo Banner */
 .promo-banner {
-  background: linear-gradient(135deg, var(--color-deep-navy) 0%, #1c4b70 100%);
+  background: linear-gradient(135deg, #352016 0%, #7A2E07 50%, #A8430E 100%);
   border-radius: var(--radius-xl);
   padding: 3.5rem 3rem;
   color: var(--color-white);
@@ -257,6 +257,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 2.5rem;
   box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(242, 140, 40, 0.25);
 }
 
 .promo-title {
@@ -270,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .promo-desc {
   font-size: 1.05rem;
-  color: #D3E4F0;
+  color: #F6EDE4;
   line-height: 1.6;
   margin-bottom: 1.75rem;
 }

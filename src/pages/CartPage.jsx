@@ -18,6 +18,11 @@ import { formatRupiah } from '../utils/formatters.js';
 export const CartPage = () => {
   const { cartItems, updateQuantity, removeFromCart, clearCart, totalItemCount, totalProductPrice } = useCart();
 
+  React.useEffect(() => {
+    document.title = "Keranjang Belanja | Marinasi Pak ABIL Malang";
+    window.scrollTo(0, 0);
+  }, []);
+
   if (cartItems.length === 0) {
     return (
       <div className="cart-page">

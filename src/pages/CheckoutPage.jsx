@@ -24,6 +24,11 @@ export const CheckoutPage = () => {
   const { cartItems, totalProductPrice, totalItemCount } = useCart();
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    document.title = "Checkout & Pemesanan WhatsApp | Marinasi Pak ABIL Malang";
+    window.scrollTo(0, 0);
+  }, []);
+
   // Form State
   const [formData, setFormData] = useState({
     name: '',
@@ -154,7 +159,7 @@ export const CheckoutPage = () => {
           <span className="section-tag">Konfirmasi Pemesanan</span>
           <h1 className="page-title">Data Pengiriman & Checkout</h1>
           <p className="page-subtitle">
-            Lengkapi data pemesan untuk pengiriman produk FoodFish di area Malang Raya via WhatsApp.
+            Lengkapi data pemesan untuk pengiriman produk Marinasi Pak ABIL di area Malang Raya via WhatsApp.
           </p>
         </div>
       </div>
@@ -205,7 +210,7 @@ export const CheckoutPage = () => {
                 />
                 {errors.phone && <div className="form-error">{errors.phone}</div>}
                 <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '0.35rem' }}>
-                  Digunakan untuk konfirmasi pesanan dan koordinasi pengiriman oleh tim FoodFish.
+                  Digunakan untuk konfirmasi pesanan dan koordinasi pengiriman oleh tim Marinasi Pak ABIL.
                 </div>
               </div>
 
@@ -242,7 +247,7 @@ export const CheckoutPage = () => {
                     <span>Ambil Sendiri (Self-Pickup)</span>
                   </div>
                   <div className="method-desc">
-                    Ambil pesanan langsung di dapur FoodFish Malang setelah konfirmasi.
+                    Ambil pesanan langsung di dapur Marinasi Pak ABIL Malang setelah konfirmasi.
                   </div>
                 </div>
               </div>
@@ -273,7 +278,7 @@ export const CheckoutPage = () => {
                   color: 'var(--color-text-secondary)',
                   border: '1px solid var(--color-border)'
                 }}>
-                  <strong style={{ color: 'var(--color-deep-navy)' }}>Lokasi Pengambilan:</strong> Titik dapur persiapan FoodFish di Malang Raya akan dibagikan via WhatsApp setelah seller menyiapkan paket Anda.
+                  <strong style={{ color: 'var(--color-deep-navy)' }}>Lokasi Pengambilan:</strong> Titik dapur persiapan Marinasi Pak ABIL di Malang Raya akan dibagikan via WhatsApp setelah seller menyiapkan paket Anda.
                 </div>
               )}
 
@@ -433,7 +438,7 @@ export const CheckoutPage = () => {
             <div style={{ padding: '1.5rem 1.75rem', overflowY: 'auto', flex: 1 }}>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: '1rem', lineHeight: '1.5' }}>
                 Format pesan di bawah ini telah digenerate secara otomatis. Saat Anda menekan tombol di bawah, 
-                WhatsApp akan terbuka dan Anda dapat langsung mengirimkannya ke FoodFish.
+                WhatsApp akan terbuka dan Anda dapat langsung mengirimkannya ke Marinasi Pak ABIL.
               </p>
 
               {/* Testing number field if placeholder */}

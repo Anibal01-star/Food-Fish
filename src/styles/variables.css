@@ -1,28 +1,50 @@
 :root {
-  /* Brand Color Palette */
-  --color-deep-navy: #123047;
-  --color-deep-navy-dark: #0c2030;
-  --color-ocean-blue: #1877A8;
-  --color-ocean-blue-hover: #14638d;
-  --color-ocean-blue-light: #e8f4fa;
-  --color-fresh-mint: #DDF2E5;
-  --color-fresh-mint-dark: #bce5cb;
-  --color-warm-cream: #FAF8F2;
-  --color-warm-cream-dark: #f0ede1;
-  --color-white: #FFFFFF;
-  --color-coral-orange: #F28C52;
-  --color-coral-orange-hover: #de7538;
+  /* Brand Color Palette — Marinasi Pak ABIL */
+  --color-primary: #A8430E;             /* Burnt Orange */
+  --color-primary-hover: #8f3609;
+  --color-primary-light: #FDF3EC;
+  --color-secondary: #C65D16;           /* Orange Kecokelatan */
+  --color-secondary-hover: #b0500f;
+  --color-accent: #F28C28;              /* Orange cerah untuk tombol & badge */
+  --color-accent-hover: #de7518;
+  --color-accent-light: #FEF3E8;
 
-  /* Neutral tones */
-  --color-text-primary: #123047;
-  --color-text-secondary: #516575;
-  --color-text-muted: #788a97;
-  --color-border: #E2E8F0;
-  --color-border-subtle: #EDF2F7;
+  /* Surfaces & Backgrounds */
+  --color-bg: #FFF8F0;                  /* Krem Hangat (Background utama) */
+  --color-surface: #FFFFFF;             /* Putih (Kartu produk & dialog) */
   --color-surface-card: #FFFFFF;
-  --color-surface-alt: #FAF8F2;
-  --color-danger: #E53E3E;
-  --color-success: #2E8540;
+  --color-surface-alt: #FFF2E5;         /* Krem lembut untuk kontras kartu */
+  --color-surface-hover: #FDF0E2;
+
+  /* Typography Colors */
+  --color-text-primary: #352016;        /* Cokelat Gelap (Heading & body tebal) */
+  --color-text-secondary: #78675C;      /* Cokelat Keabu-abuan (Teks deskripsi) */
+  --color-text-muted: #9E8C80;          /* Teks tanggal & caption halus */
+
+  /* Borders & Dividers */
+  --color-border: #EAD8C7;              /* Krem Kecokelatan */
+  --color-border-subtle: #F6EDE4;
+  --color-border-focus: #C65D16;
+
+  /* Legacy Compatibility Variables (Mapped to New Warm Palette) */
+  --color-deep-navy: #352016;           /* Menggantikan navy tua dengan cokelat gelap */
+  --color-deep-navy-dark: #24140D;
+  --color-ocean-blue: #A8430E;          /* Menggantikan biru dengan burnt orange */
+  --color-ocean-blue-hover: #C65D16;
+  --color-ocean-blue-light: #FDF3EC;
+  --color-fresh-mint: #FFF2E5;          /* Menggantikan mint dengan krem lembut */
+  --color-fresh-mint-dark: #F7DBC3;
+  --color-warm-cream: #FFF8F0;          /* Krem hangat */
+  --color-warm-cream-dark: #F5E7D8;
+  --color-coral-orange: #F28C28;        /* Accent orange */
+  --color-coral-orange-hover: #de7518;
+  --color-white: #FFFFFF;
+
+  /* Semantic Alert Colors */
+  --color-danger: #D9381E;
+  --color-success: #2A8547;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
 
   /* Typography */
   --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -44,11 +66,11 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(18, 48, 71, 0.06), 0 1px 2px rgba(18, 48, 71, 0.04);
-  --shadow-md: 0 4px 12px rgba(18, 48, 71, 0.08), 0 2px 4px rgba(18, 48, 71, 0.04);
-  --shadow-lg: 0 12px 28px rgba(18, 48, 71, 0.12), 0 4px 10px rgba(18, 48, 71, 0.06);
-  --shadow-hover: 0 16px 36px rgba(18, 48, 71, 0.15), 0 6px 14px rgba(18, 48, 71, 0.08);
+  /* Shadows (Warm Tone Shadows) */
+  --shadow-sm: 0 1px 3px rgba(53, 32, 22, 0.05), 0 1px 2px rgba(53, 32, 22, 0.03);
+  --shadow-md: 0 4px 14px rgba(53, 32, 22, 0.07), 0 2px 6px rgba(53, 32, 22, 0.04);
+  --shadow-lg: 0 12px 28px rgba(53, 32, 22, 0.10), 0 4px 10px rgba(53, 32, 22, 0.05);
+  --shadow-hover: 0 18px 38px rgba(168, 67, 14, 0.14), 0 6px 14px rgba(53, 32, 22, 0.06);
 
   /* Transitions */
   --transition-fast: 0.18s ease;

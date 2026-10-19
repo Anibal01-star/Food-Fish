@@ -83,15 +83,26 @@ export const CatalogPage = () => {
     return result;
   }, [selectedCategory, searchQuery, sortBy]);
 
+  useEffect(() => {
+    document.title = "Katalog Ikan Marinasi Siap Masak Malang | Marinasi Pak ABIL";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Lihat katalog lengkap ikan mentah berbumbu marinasi siap masak dari Marinasi Pak ABIL. Gurame bumbu kuning, nila bakar madu, lele ketumbar, dan fillet dori higienis di Malang.'
+      );
+    }
+  }, []);
+
   return (
     <div className="catalog-page">
       {/* Header Banner */}
       <div className="page-header">
         <div className="page-header-content">
-          <span className="section-tag">Katalog FoodFish</span>
-          <h1 className="page-title">Ikan Marinasi & Siap Masak</h1>
+          <span className="section-tag">Katalog Pilihan</span>
+          <h1 className="page-title">Katalog Ikan Marinasi Siap Masak Malang</h1>
           <p className="page-subtitle">
-            Pilihan ikan segar berkualitas dengan bumbu rempah pilihan. Bersih, higienis, tinggal goreng atau bakar tanpa repot.
+            Pilihan ikan mentah segar berkualitas dengan racikan bumbu rempah pilihan khas Marinasi Pak ABIL. Bersih, higienis, tinggal goreng atau bakar tanpa repot untuk keluarga di Malang Raya.
           </p>
         </div>
       </div>
@@ -99,12 +110,11 @@ export const CatalogPage = () => {
       <div className="catalog-section">
         {/* Notice on simulation catalog */}
         <div className="notice-box info" style={{ marginBottom: '2rem' }}>
-          <Sparkles size={20} color="#1877A8" className="notice-icon" />
+          <Sparkles size={20} color="var(--color-primary)" className="notice-icon" />
           <div className="notice-content">
-            <div className="notice-title">Katalog & Simulasi Pesanan FoodFish Malang</div>
-            <p style={{ margin: 0, fontSize: '0.88rem' }}>
-              Daftar menu dan harga di bawah ini merupakan data contoh katalog frontend. 
-              Pesanan Anda akan dikirimkan sebagai draft pemesanan langsung ke penjual via WhatsApp untuk konfirmasi ketersediaan stok hari ini.
+            <div className="notice-title">Katalog & Pemesanan Marinasi Pak ABIL Malang</div>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--color-text-secondary)' }}>
+              Pilih menu ikan marinasi favorit keluarga Anda di bawah ini. Pesanan Anda akan dikonfirmasi secara cepat dan langsung oleh admin via WhatsApp untuk ketersediaan stok dan pengiriman hari ini.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 /**
- * DATA GALERI FOTO FOODFISH (FORMAT PNG LOKAL)
+ * DATA GALERI FOTO MARINASI PAK ABIL (FORMAT PNG LOKAL)
  */
 
 export const GALLERY_IMAGES = [
@@ -9,8 +9,9 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/gurame-bumbu-kuning.png",
+    alt: "Ikan gurame bumbu kuning tradisional siap masak dari Marinasi Pak ABIL",
     aspect: "landscape",
-    description: "Gurame segar kualitas premium dengan baluran bumbu kunyit, bawang putih, dan rempah nusantara meresap.",
+    description: "Gurame segar kualitas premium dengan baluran bumbu kunyit, bawang putih, dan rempah nusantara meresap dari Marinasi Pak ABIL.",
     productSlug: "gurame-bumbu-kuning-rempah",
     tags: ["Gurame", "Bumbu Kuning", "PNG"]
   },
@@ -20,8 +21,9 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/nila-bakar-madu.png",
+    alt: "Ikan nila marinasi bakar madu khas Jimbaran untuk pelanggan Malang Raya",
     aspect: "landscape",
-    description: "Nila segar air tawar dengan lumuran saus bakar madu karamel gurih siap bakar di atas wajan.",
+    description: "Nila segar air tawar dengan lumuran saus bakar madu karamel gurih siap bakar di atas wajan teflon rumahan.",
     productSlug: "nila-marinasi-bakar-madu-jimbaran",
     tags: ["Nila", "Bakar Madu", "PNG"]
   },
@@ -31,6 +33,7 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/lele-ketumbar.png",
+    alt: "Ikan lele marinasi bumbu ketumbar dan bawang gurih siap goreng",
     aspect: "landscape",
     description: "Lele segar bersih bebas lendir berpadu ketumbar sangrai wangi, siap digoreng super crispy.",
     productSlug: "lele-marinasi-ketumbar-bawang",
@@ -42,8 +45,9 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/fillet-dori-garlic.png",
+    alt: "Fillet dori marinasi garlic butter dan lemon tanpa duri siap masak",
     aspect: "landscape",
-    description: "Daging dori fillet lembut tanpa duri berbalut butter lezat dan aroma perasan lemon segar.",
+    description: "Daging dori fillet lembut tanpa duri berbalut butter lezat dan aroma perasan lemon segar dari Marinasi Pak ABIL.",
     productSlug: "fillet-dori-bumbu-garlic-butter-lemon",
     tags: ["Dori Fillet", "Tanpa Duri", "PNG"]
   },
@@ -53,6 +57,7 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/bandeng-cabut-duri.png",
+    alt: "Ikan bandeng cabut duri berbumbu kuning siap masak dari Marinasi Pak ABIL",
     aspect: "landscape",
     description: "Bandeng gurih dengan seluruh duri halus tercabut bersih secara higienis, tinggal goreng empuk.",
     productSlug: "bandeng-cabut-duri-marinasi-kunyit",
@@ -64,6 +69,7 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/tongkol-balado.png",
+    alt: "Ikan tongkol marinasi bumbu balado pedas siap masak",
     aspect: "landscape",
     description: "Potongan steak tongkol segar marinasi balado merah cabai rawit pedas mantap.",
     productSlug: "tongkol-suwir-bumbu-balado-pedas",
@@ -75,6 +81,7 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/udang-garlic-butter.png",
+    alt: "Udang marinasi bumbu bawang putih siap tumis cepat",
     aspect: "landscape",
     description: "Udang vaname segar kupas bersih dengan racikan garlic butter istimewa siap tumis kilat.",
     productSlug: "udang-vaname-marinasi-garlic-butter",
@@ -86,8 +93,9 @@ export const GALLERY_IMAGES = [
     category: "produk",
     categoryLabel: "Varian Ikan Marinasi",
     src: "/images/paket-keluarga.png",
+    alt: "Paket hemat aneka varian ikan marinasi siap masak untuk keluarga",
     aspect: "landscape",
-    description: "Stok makan keluarga mingguan berisi varian gurame, nila madu, dan lele ketumbar.",
+    description: "Stok makan keluarga mingguan berisi varian gurame, nila madu, dan lele ketumbar dari Marinasi Pak ABIL.",
     productSlug: "paket-komplit-keluarga-hemat-3-varian",
     tags: ["Paket Hemat", "Stok Keluarga", "PNG"]
   },
@@ -97,16 +105,18 @@ export const GALLERY_IMAGES = [
     category: "dapur",
     categoryLabel: "Proses Dapur & Rempah",
     src: "/images/bumbu-rempah-nusantara.png",
+    alt: "Racikan bumbu rempah nusantara segar alami untuk marinasi ikan",
     aspect: "landscape",
     description: "Kunyit segar pilihan, bawang lokal, serai, daun jeruk, dan ketumbar sangrai tanpa bahan pengawet.",
     tags: ["Bumbu Alami", "Rempah Nusantara", "PNG"]
   },
   {
     id: "gal-010",
-    title: "Standar Dapur Higienis FoodFish",
+    title: "Standar Dapur Higienis Marinasi Pak ABIL",
     category: "dapur",
     categoryLabel: "Proses Dapur & Rempah",
     src: "/images/dapur-persiapan.png",
+    alt: "Standar kebersihan proses persiapan ikan marinasi Marinasi Pak ABIL",
     aspect: "landscape",
     description: "Proses pembersihan sisik dan kotoran ikan secara steril menggunakan standar kebersihan ketat.",
     tags: ["Higienis", "Dapur Bersih", "PNG"]
@@ -117,6 +127,7 @@ export const GALLERY_IMAGES = [
     category: "dapur",
     categoryLabel: "Proses Dapur & Rempah",
     src: "/images/kemasan-vacuum-pack.png",
+    alt: "Kemasan vacuum pack kedap udara menjaga kesegaran ikan marinasi",
     aspect: "landscape",
     description: "Pengemasan kedap udara menjaga sari rasa daging tetap juicy dan tahan disimpan beku di freezer.",
     tags: ["Vacuum Pack", "Food Prep", "PNG"]
@@ -127,6 +138,7 @@ export const GALLERY_IMAGES = [
     category: "sajian",
     categoryLabel: "Hasil Masakan Siap Santap",
     src: "/images/ikan-bakar-teflon.png",
+    alt: "Sajian ikan bakar teflon praktis bumbu madu karamel siap santap",
     aspect: "landscape",
     description: "Cukup dipanggang 8-10 menit di atas wajan antilengket untuk menu makan malam lezat keluarga.",
     tags: ["Bakar Teflon", "Praktis", "PNG"]
@@ -137,6 +149,7 @@ export const GALLERY_IMAGES = [
     category: "sajian",
     categoryLabel: "Hasil Masakan Siap Santap",
     src: "/images/ikan-goreng-crispy.png",
+    alt: "Hasil gorengan ikan marinasi crispy renyah keemasan dan tidak lengket",
     aspect: "landscape",
     description: "Warna keemasan menggugah selera dengan tekstur renyah di luar dan daging lembut gurih di dalam.",
     tags: ["Goreng Crispy", "Renyah", "PNG"]
@@ -147,8 +160,9 @@ export const GALLERY_IMAGES = [
     category: "sajian",
     categoryLabel: "Hasil Masakan Siap Santap",
     src: "/images/resep-sambal.png",
+    alt: "Aneka resep sambal segar nusantara pendamping ikan bakar dan goreng",
     aspect: "landscape",
-    description: "Sambal dabu-dabu segar, sambal korek bawang, dan sambal kecap pendamping hidangan ikan FoodFish.",
+    description: "Sambal dabu-dabu segar, sambal korek bawang, dan sambal kecap pendamping hidangan ikan Marinasi Pak ABIL.",
     tags: ["Sambal Segar", "Pelengkap", "PNG"]
   },
   {
@@ -157,6 +171,7 @@ export const GALLERY_IMAGES = [
     category: "sajian",
     categoryLabel: "Hasil Masakan Siap Santap",
     src: "/images/hero-ikan-marinasi.png",
+    alt: "Ikan berbumbu marinasi rempah segar siap masak dari Marinasi Pak ABIL",
     aspect: "landscape",
     description: "Visual utama ikan segar bumbu marinasi berpadu cabai dan kesegaran perasan jeruk nipis.",
     tags: ["Hero Visual", "Branding", "PNG"]

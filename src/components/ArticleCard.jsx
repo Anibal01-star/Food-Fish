@@ -7,8 +7,8 @@ export const ArticleCard = ({ article, onReadMore }) => {
   const fallbackImage = "/images/tips-menggoreng-ikan.png";
 
   return (
-    <article className="product-card" style={{ height: '100%' }}>
-      <div className="product-image-container" style={{ paddingTop: '60%' }}>
+    <article className="product-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Link to={`/artikel/${article.slug}`} className="product-image-container" style={{ paddingTop: '60%', display: 'block' }}>
         <img
           src={imageError ? fallbackImage : article.image}
           alt={article.title}
@@ -19,9 +19,9 @@ export const ArticleCard = ({ article, onReadMore }) => {
         <div className="product-badge-list">
           <span className="badge badge-category">{article.category}</span>
         </div>
-      </div>
+      </Link>
 
-      <div className="product-body">
+      <div className="product-body" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem' }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
             <Calendar size={13} />
@@ -34,51 +34,53 @@ export const ArticleCard = ({ article, onReadMore }) => {
         </div>
 
         <h3 className="product-title" style={{ fontSize: '1.12rem', marginBottom: '0.65rem' }}>
-          {article.title}
+          <Link 
+            to={`/artikel/${article.slug}`}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            {article.title}
+          </Link>
         </h3>
 
         <p className="product-excerpt" style={{ WebkitLineClamp: 3, marginBottom: '1.25rem' }}>
           {article.excerpt}
         </p>
 
-        <div style={{ marginTop: 'auto', paddingTop: '0.85rem', borderTop: '1px solid var(--color-border-subtle)' }}>
-          {onReadMore ? (
+        <div style={{ marginTop: 'auto', paddingTop: '0.85rem', borderTop: '1px solid var(--color-border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Link
+            to={`/artikel/${article.slug}`}
+            style={{
+              color: 'var(--color-ocean-blue)',
+              fontFamily: 'var(--font-heading)',
+              fontWeight: 700,
+              fontSize: '0.92rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              textDecoration: 'none'
+            }}
+          >
+            <span>Baca Artikel Lengkap</span>
+            <ArrowRight size={16} />
+          </Link>
+
+          {onReadMore && (
             <button
               type="button"
               onClick={() => onReadMore(article)}
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'var(--color-ocean-blue)',
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 700,
-                fontSize: '0.92rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
+                color: 'var(--color-text-muted)',
+                fontSize: '0.78rem',
                 cursor: 'pointer',
-                padding: 0
+                padding: '2px 6px',
+                borderRadius: '4px'
               }}
+              title="Pratinjau Cepat"
             >
-              <span>Baca Selengkapnya</span>
-              <ArrowRight size={16} />
+              Pratinjau
             </button>
-          ) : (
-            <Link
-              to={`/artikel#${article.slug}`}
-              style={{
-                color: 'var(--color-ocean-blue)',
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 700,
-                fontSize: '0.92rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem'
-              }}
-            >
-              <span>Baca Selengkapnya</span>
-              <ArrowRight size={16} />
-            </Link>
           )}
         </div>
       </div>

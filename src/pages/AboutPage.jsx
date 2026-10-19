@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Fish, 
@@ -16,15 +16,27 @@ import {
 import { BUSINESS_INFO } from '../config/whatsapp.js';
 
 export const AboutPage = () => {
+  useEffect(() => {
+    document.title = "Tentang Kami – Mengenal Marinasi Pak ABIL Malang";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Mengenal Marinasi Pak ABIL, penyedia ikan mentah berbumbu marinasi rempah siap masak di Malang Raya. Praktis, higienis, dan lezat untuk santapan keluarga.'
+      );
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="about-page">
       {/* Page Header */}
       <div className="page-header">
         <div className="page-header-content">
-          <span className="section-tag">Mengenal FoodFish</span>
+          <span className="section-tag">Mengenal Marinasi Pak ABIL</span>
           <h1 className="page-title">Cerita & Komitmen Kualitas Kami</h1>
           <p className="page-subtitle">
-            Hadir di Malang Raya untuk memudahkan keluarga menikmati sajian ikan berbumbu rempah lezat, sehat, dan praktis tanpa repot.
+            Hadir di Malang Raya untuk memudahkan keluarga menikmati sajian ikan berbumbu rempah lezat, sehat, dan praktis tanpa repot membersihkan sisik.
           </p>
         </div>
       </div>
@@ -39,7 +51,7 @@ export const AboutPage = () => {
             alignItems: 'center'
           }}>
             <div>
-              <span className="section-tag">Konsep Bisnis</span>
+              <span className="section-tag">Konsep Usaha</span>
               <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--color-deep-navy)', marginBottom: '1.25rem', lineHeight: '1.25' }}>
                 Menghadirkan Kemudahan Masak Ikan Segar di Meja Makan Keluarga
               </h2>
@@ -47,24 +59,24 @@ export const AboutPage = () => {
                 Banyak orang menyukai kelezatan ikan segar, namun sering kali urung memasaknya karena proses pembersihan yang amis, repot mencabut duri, hingga sulitnya meracik bumbu rempah yang pas.
               </p>
               <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', lineHeight: '1.7', marginBottom: '1.75rem' }}>
-                <strong>FoodFish</strong> hadir menjawab kebutuhan tersebut. Kami memadukan ikan air tawar dan laut segar pilihan dengan formulasi bumbu rempah tradisional nusantara. Seluruh produk kami dibersihkan higienis, dibumbui hingga meresap sempurna, dan dikemas kedap udara (vacuum pack) sehingga siap langsung dimasak dalam waktu 10 menit.
+                <strong>Marinasi Pak ABIL</strong> hadir menjawab kebutuhan tersebut. Kami memadukan ikan air tawar dan laut segar pilihan dengan formulasi bumbu rempah tradisional nusantara. Seluruh produk kami dibersihkan higienis, dibumbui hingga meresap sempurna, dan dikemas kedap udara (vacuum pack) sehingga siap langsung dimasak dalam waktu 10 menit.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)', fontWeight: 600 }}>
-                  <CheckCircle2 size={18} color="var(--color-ocean-blue)" />
+                  <CheckCircle2 size={18} color="var(--color-primary)" />
                   <span>Ikan Segar Pilihan</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)', fontWeight: 600 }}>
-                  <CheckCircle2 size={18} color="var(--color-ocean-blue)" />
+                  <CheckCircle2 size={18} color="var(--color-primary)" />
                   <span>Rempah Alami Tradisional</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)', fontWeight: 600 }}>
-                  <CheckCircle2 size={18} color="var(--color-ocean-blue)" />
+                  <CheckCircle2 size={18} color="var(--color-primary)" />
                   <span>Tanpa Pengawet Sintetis</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)', fontWeight: 600 }}>
-                  <CheckCircle2 size={18} color="var(--color-ocean-blue)" />
+                  <CheckCircle2 size={18} color="var(--color-primary)" />
                   <span>Kemasan Vacuum Higienis</span>
                 </div>
               </div>
@@ -79,7 +91,9 @@ export const AboutPage = () => {
               }}>
                 <img
                   src="/images/dapur-persiapan.png"
-                  alt="Dapur persiapan ikan marinasi rempah FoodFish"
+                  alt="Dapur persiapan pengolahan ikan marinasi higienis Marinasi Pak ABIL"
+                  width="480"
+                  height="420"
                   style={{ width: '100%', height: '420px', objectFit: 'cover' }}
                 />
               </div>
@@ -93,7 +107,7 @@ export const AboutPage = () => {
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Nilai & Standar</span>
-            <h2 className="section-title">4 Pilar Standar Kualitas FoodFish</h2>
+            <h2 className="section-title">4 Pilar Standar Kualitas Marinasi Pak ABIL</h2>
             <p className="section-desc">
               Setiap kemasan produk ikan marinasi kami melewati seleksi ketat demi kepuasan rasa santapan keluarga Anda.
             </p>
@@ -102,7 +116,7 @@ export const AboutPage = () => {
           <div className="grid-4">
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Fish size={24} />
+                <Fish size={24} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Kesegaran Terjamin</h3>
               <p className="benefit-desc">
@@ -112,7 +126,7 @@ export const AboutPage = () => {
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Sparkles size={24} />
+                <Sparkles size={24} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Racikan Rempah Otentik</h3>
               <p className="benefit-desc">
@@ -122,7 +136,7 @@ export const AboutPage = () => {
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <ShieldCheck size={24} />
+                <ShieldCheck size={24} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Standar Kebersihan Tinggi</h3>
               <p className="benefit-desc">
@@ -132,7 +146,7 @@ export const AboutPage = () => {
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Clock size={24} />
+                <Clock size={24} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Hemat Waktu & Praktis</h3>
               <p className="benefit-desc">
@@ -147,23 +161,24 @@ export const AboutPage = () => {
       <section className="section section-white">
         <div className="section-container">
           <div style={{
-            backgroundColor: 'var(--color-deep-navy)',
+            background: 'linear-gradient(135deg, #352016 0%, #7A2E07 50%, #A8430E 100%)',
             borderRadius: 'var(--radius-xl)',
             padding: '3.5rem 3rem',
             color: '#FFFFFF',
             display: 'grid',
             gridTemplateColumns: '1.2fr 0.8fr',
             gap: '3rem',
-            alignItems: 'center'
+            alignItems: 'center',
+            boxShadow: 'var(--shadow-lg)'
           }}>
             <div>
               <span style={{
                 display: 'inline-block',
-                backgroundColor: 'var(--color-ocean-blue)',
+                backgroundColor: 'var(--color-accent)',
                 color: '#FFFFFF',
                 fontSize: '0.8rem',
                 fontWeight: 700,
-                padding: '0.3rem 0.8rem',
+                padding: '0.35rem 0.85rem',
                 borderRadius: '999px',
                 marginBottom: '1rem',
                 textTransform: 'uppercase'
@@ -173,7 +188,7 @@ export const AboutPage = () => {
               <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem', lineHeight: '1.25' }}>
                 Melayani Pengiriman Cepat Seluruh Malang Raya
               </h2>
-              <p style={{ fontSize: '1.05rem', color: '#D3E4F0', lineHeight: '1.6', marginBottom: '1.75rem' }}>
+              <p style={{ fontSize: '1.05rem', color: '#F6EDE4', lineHeight: '1.6', marginBottom: '1.75rem' }}>
                 Kami siap mengantarkan stok lauk ikan marinasi beku higienis ke rumah Anda di wilayah:
               </p>
 
@@ -183,10 +198,10 @@ export const AboutPage = () => {
                   padding: '1rem',
                   borderRadius: 'var(--radius-md)',
                   textAlign: 'center',
-                  border: '1px solid rgba(255, 255, 255, 0.12)'
+                  border: '1px solid rgba(255, 255, 255, 0.15)'
                 }}>
-                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-fresh-mint)' }}>Kota Malang</div>
-                  <div style={{ fontSize: '0.8rem', color: '#B5C6D4', marginTop: '0.2rem' }}>Seluruh Kecamatan</div>
+                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-accent)' }}>Kota Malang</div>
+                  <div style={{ fontSize: '0.8rem', color: '#F6EDE4', marginTop: '0.2rem' }}>Seluruh Kecamatan</div>
                 </div>
 
                 <div style={{
@@ -194,10 +209,10 @@ export const AboutPage = () => {
                   padding: '1rem',
                   borderRadius: 'var(--radius-md)',
                   textAlign: 'center',
-                  border: '1px solid rgba(255, 255, 255, 0.12)'
+                  border: '1px solid rgba(255, 255, 255, 0.15)'
                 }}>
-                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-fresh-mint)' }}>Kab. Malang</div>
-                  <div style={{ fontSize: '0.8rem', color: '#B5C6D4', marginTop: '0.2rem' }}>Radius Terjangkau</div>
+                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-accent)' }}>Kab. Malang</div>
+                  <div style={{ fontSize: '0.8rem', color: '#F6EDE4', marginTop: '0.2rem' }}>Radius Terjangkau</div>
                 </div>
 
                 <div style={{
@@ -205,26 +220,26 @@ export const AboutPage = () => {
                   padding: '1rem',
                   borderRadius: 'var(--radius-md)',
                   textAlign: 'center',
-                  border: '1px solid rgba(255, 255, 255, 0.12)'
+                  border: '1px solid rgba(255, 255, 255, 0.15)'
                 }}>
-                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-fresh-mint)' }}>Kota Batu</div>
-                  <div style={{ fontSize: '0.8rem', color: '#B5C6D4', marginTop: '0.2rem' }}>Area Perkotaan</div>
+                  <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-accent)' }}>Kota Batu</div>
+                  <div style={{ fontSize: '0.8rem', color: '#F6EDE4', marginTop: '0.2rem' }}>Area Perkotaan</div>
                 </div>
               </div>
             </div>
 
             <div style={{ textAlign: 'center' }}>
               <div style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                backgroundColor: 'rgba(255, 255, 255, 0.08)',
                 borderRadius: 'var(--radius-lg)',
                 padding: '2rem',
-                border: '1px solid rgba(255, 255, 255, 0.15)'
+                border: '1px solid rgba(255, 255, 255, 0.2)'
               }}>
-                <MapPin size={42} color="var(--color-coral-orange)" style={{ margin: '0 auto 1rem' }} />
+                <MapPin size={42} color="var(--color-accent)" style={{ margin: '0 auto 1rem' }} />
                 <h4 style={{ color: '#FFFFFF', fontSize: '1.2rem', marginBottom: '0.5rem' }}>
                   Siap Memesan Hari Ini?
                 </h4>
-                <p style={{ color: '#B5C6D4', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
+                <p style={{ color: '#F6EDE4', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
                   Pesan langsung melalui website ini dan konfirmasikan pesanan Anda lewat WhatsApp seller.
                 </p>
                 <Link to="/produk" className="btn btn-coral" style={{ width: '100%' }}>
@@ -237,14 +252,14 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* Simulation Content Disclaimer */}
+      {/* Service Notes */}
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto 4rem', padding: '0 1.5rem' }}>
         <div className="notice-box info">
-          <AlertCircle size={20} color="#1877A8" className="notice-icon" />
+          <AlertCircle size={20} color="var(--color-primary)" className="notice-icon" />
           <div className="notice-content">
-            <div className="notice-title">Keterangan Informasi Placeholder</div>
-            <p style={{ margin: 0, fontSize: '0.88rem' }}>
-              Informasi profil, riwayat usaha, dan area layanan di halaman ini merupakan materi contoh untuk demonstrasi fungsionalitas website FoodFish. Detail sertifikasi dan izin usaha resmi akan diperbarui sesuai data legalitas pemilik bisnis saat rilis komersial.
+            <div className="notice-title">Keterangan Layanan Pemesanan</div>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--color-text-secondary)' }}>
+              Marinasi Pak ABIL melayani pemesanan ikan marinasi mentah siap masak untuk wilayah Malang Raya. Pemesanan dan konfirmasi ketersediaan stok dapat dilakukan langsung melalui sistem keranjang website atau chat WhatsApp.
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Phone, 
   MapPin, 
@@ -25,20 +25,32 @@ import { WhatsAppNotice } from '../components/WhatsAppNotice.jsx';
 export const ContactPage = () => {
   const [quickQuestion, setQuickQuestion] = useState('');
 
+  useEffect(() => {
+    document.title = "Kontak & Layanan Pemesanan Malang | Marinasi Pak ABIL";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Hubungi Marinasi Pak ABIL untuk pemesanan ikan marinasi siap masak di Malang Raya. Layanan responsif melalui WhatsApp dan website.'
+      );
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   const directChatUrl = createWhatsAppUrl(
     quickQuestion.trim() 
-      ? `Halo FoodFish Malang! Saya ingin bertanya: "${quickQuestion.trim()}"`
-      : "Halo FoodFish Malang! Saya ingin bertanya seputar pemesanan ikan marinasi."
+      ? `Halo Marinasi Pak ABIL Malang! Saya ingin bertanya: "${quickQuestion.trim()}"`
+      : "Halo Marinasi Pak ABIL Malang! Saya ingin bertanya seputar pemesanan ikan marinasi siap masak."
   );
 
   const faqs = [
     {
-      q: "Berapa lama ikan marinasi FoodFish tahan disimpan?",
-      a: "Dalam kemasan vacuum pack tertutup rapat di dalam freezer suhu -18°C, produk FoodFish tahan hingga 2 bulan tanpa bahan pengawet kimia. Jika ditaruh di chiller biasa, disarankan dimasak dalam waktu 2-3 hari."
+      q: "Berapa lama ikan marinasi Marinasi Pak ABIL tahan disimpan?",
+      a: "Dalam kemasan vacuum pack tertutup rapat di dalam freezer suhu -18°C, produk Marinasi Pak ABIL tahan hingga 2 bulan tanpa bahan pengawet kimia. Jika ditaruh di chiller kulkas bawah, disarankan dimasak dalam waktu 2-3 hari."
     },
     {
       q: "Apakah bumbu marinasi sudah siap masak tanpa perlu ditambah garam?",
-      a: "Betul! Seluruh racikan bumbu rempah kami sudah komplit dan meresap ke dalam serat ikan. Anda tinggal panaskan minyak atau teflon tanpa perlu menambahkan garam, bumbu penyedap, atau perasan jeruk lagi."
+      a: "Betul! Seluruh racikan bumbu rempah kami sudah komplit dan meresap ke dalam serat daging ikan. Anda tinggal panaskan minyak atau wajan teflon tanpa perlu menambahkan garam atau bumbu penyedap lagi."
     },
     {
       q: "Berapa lama waktu pengantaran di area Malang Raya?",
@@ -46,7 +58,7 @@ export const ContactPage = () => {
     },
     {
       q: "Bagaimana cara pembayaran pesanan?",
-      a: "Setelah Anda mengirimkan format pesanan via WhatsApp, penjual akan mengonfirmasi total nominal termasuk tarif ongkos kirim. Pembayaran dapat dilakukan via transfer bank atau metode lain yang disepakati langsung dengan penjual."
+      a: "Setelah Anda mengirimkan format pesanan via website atau WhatsApp, admin akan mengonfirmasi total nominal termasuk tarif ongkos kirim. Pembayaran dapat dilakukan via transfer bank atau metode lain yang disepakati."
     }
   ];
 
@@ -58,9 +70,9 @@ export const ContactPage = () => {
       <div className="page-header">
         <div className="page-header-content">
           <span className="section-tag">Hubungi Kami</span>
-          <h1 className="page-title">Kontak & Layanan FoodFish Malang</h1>
+          <h1 className="page-title">Kontak & Layanan Marinasi Pak ABIL Malang</h1>
           <p className="page-subtitle">
-            Punya pertanyaan mengenai menu, ketersediaan stok harian, atau pemesanan dalam jumlah banyak? Tim kami siap melayani Anda.
+            Punya pertanyaan mengenai menu ikan marinasi, ketersediaan stok harian, atau pemesanan untuk keluarga di Malang Raya? Kami siap melayani Anda.
           </p>
         </div>
       </div>
@@ -268,7 +280,7 @@ export const ContactPage = () => {
             <span className="section-tag">Pertanyaan Umum</span>
             <h2 className="section-title">Frequently Asked Questions</h2>
             <p className="section-desc">
-              Jawaban atas hal-hal yang sering ditanyakan oleh pelanggan FoodFish di Malang Raya.
+              Jawaban atas hal-hal yang sering ditanyakan oleh pelanggan Marinasi Pak ABIL di Malang Raya.
             </p>
           </div>
 

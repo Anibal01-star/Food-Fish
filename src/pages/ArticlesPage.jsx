@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
-import { ARTICLES } from '../data/articles.js';
+import { Link } from 'react-router-dom';
+import { ARTICLES, getArticleCategories } from '../data/articles.js';
 import { ArticleCard } from '../components/ArticleCard.jsx';
-import { BookOpen, Calendar, Clock, User, X, ArrowLeft, Sparkles } from 'lucide-react';
+import { BookOpen, Calendar, Clock, User, X, ArrowLeft, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
 
 export const ArticlesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
   const [activeArticle, setActiveArticle] = useState(null);
 
-  const categories = ['Semua', 'Tips Memasak', 'Food Preparation', 'Resep & Inspirasi'];
+  React.useEffect(() => {
+    document.title = "Artikel & Panduan Memasak Ikan Marinasi | Marinasi Pak ABIL Malang";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Baca panduan memasak ikan marinasi anti lengket, tips food prep freezer, resep sambal, dan trik memanggang di teflon dari Marinasi Pak ABIL.'
+      );
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
+  const categories = getArticleCategories();
 
   const filteredArticles = selectedCategory === 'Semua' 
     ? ARTICLES 
@@ -18,10 +31,10 @@ export const ArticlesPage = () => {
       {/* Page Header */}
       <div className="page-header">
         <div className="page-header-content">
-          <span className="section-tag">Dapur & Inspirasi</span>
-          <h1 className="page-title">Artikel & Panduan Memasak</h1>
+          <span className="section-tag">Dapur & Inspirasi Kuliner</span>
+          <h1 className="page-title">Panduan Memasak & Resep Olahan Ikan</h1>
           <p className="page-subtitle">
-            Tips praktis mengolah ikan marinasi agar tidak lengket di wajan, panduan food prep penyimpanan freezer, dan kreasi resep pendamping lezat.
+            Kumpulan artikel panduan memasak ikan marinasi anti lengket, trik memanggang di teflon, rahasia bumbu kuning bebas bau lumpur, dan tips food prep praktis untuk keluarga.
           </p>
         </div>
       </div>
@@ -59,7 +72,7 @@ export const ArticlesPage = () => {
         </div>
       </div>
 
-      {/* Article Reader Modal */}
+      {/* Article Quick Reader Modal */}
       {activeArticle && (
         <div style={{
           position: 'fixed',
@@ -78,7 +91,7 @@ export const ArticlesPage = () => {
           <div style={{
             backgroundColor: '#FFFFFF',
             borderRadius: 'var(--radius-xl)',
-            maxWidth: '750px',
+            maxWidth: '780px',
             width: '100%',
             maxHeight: '90vh',
             display: 'flex',
@@ -114,7 +127,7 @@ export const ArticlesPage = () => {
 
             {/* Modal Body */}
             <div style={{ padding: '2rem', overflowY: 'auto', flex: 1 }}>
-              <div style={{ display: 'flex', gap: '1.25rem', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', gap: '1.25rem', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <Calendar size={14} />
                   {activeArticle.date}
@@ -129,7 +142,7 @@ export const ArticlesPage = () => {
                 </span>
               </div>
 
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-deep-navy)', marginBottom: '1.5rem', lineHeight: '1.3' }}>
+              <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-deep-navy)', marginBottom: '1.25rem', lineHeight: '1.3' }}>
                 {activeArticle.title}
               </h2>
 
@@ -147,16 +160,29 @@ export const ArticlesPage = () => {
               />
 
               <div style={{
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 lineHeight: '1.8',
                 color: 'var(--color-text-secondary)',
-                whiteSpace: 'pre-line'
+                marginBottom: '1.5rem'
               }}>
-                {activeArticle.content}
+                <p style={{ fontWeight: 600, color: 'var(--color-deep-navy)', marginBottom: '1rem' }}>
+                  {activeArticle.excerpt}
+                </p>
+
+                {activeArticle.sections && activeArticle.sections.slice(0, 2).map((sec, i) => (
+                  <div key={i} style={{ marginBottom: '1.25rem' }}>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-deep-navy)', marginBottom: '0.5rem' }}>
+                      {sec.heading}
+                    </h3>
+                    <p style={{ fontSize: '0.96rem', lineHeight: 1.7 }}>
+                      {sec.content}
+                    </p>
+                  </div>
+                ))}
               </div>
 
               {activeArticle.tags && (
-                <div style={{ marginTop: '2rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', paddingTop: '1.5rem', borderTop: '1px solid var(--color-border)' }}>
+                <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', paddingTop: '1.25rem', borderTop: '1px solid var(--color-border)' }}>
                   {activeArticle.tags.map((tag) => (
                     <span key={tag} style={{
                       backgroundColor: 'var(--color-warm-cream)',
@@ -175,19 +201,32 @@ export const ArticlesPage = () => {
 
             {/* Modal Footer */}
             <div style={{
-              padding: '1rem 1.75rem',
+              padding: '1.25rem 1.75rem',
               borderTop: '1px solid var(--color-border)',
               display: 'flex',
-              justifyContent: 'flex-end',
-              backgroundColor: '#FAFAFA'
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              backgroundColor: '#FAFAFA',
+              flexWrap: 'wrap',
+              gap: '0.75rem'
             }}>
               <button
                 type="button"
                 className="btn btn-secondary"
                 onClick={() => setActiveArticle(null)}
               >
-                Tutup Bacaan
+                Tutup Pratinjau
               </button>
+
+              <Link
+                to={`/artikel/${activeArticle.slug}`}
+                className="btn btn-primary"
+                onClick={() => setActiveArticle(null)}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                <span>Buka Halaman Artikel Lengkap</span>
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>

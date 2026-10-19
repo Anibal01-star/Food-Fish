@@ -55,13 +55,13 @@ export const buildWhatsAppOrderMessage = ({
 
   const addressSection = deliveryMethod === 'delivery' 
     ? `📍 *Alamat Pengiriman:*\n${deliveryAddress}\n(Area: Malang Raya)`
-    : `📍 *Metode Penyerahan:*\nAmbil Sendiri (Self-Pickup di Lokasi FoodFish Malang)`;
+    : `📍 *Metode Penyerahan:*\nAmbil Sendiri (Self-Pickup di Lokasi Marinasi Pak ABIL Malang)`;
 
   const notesSection = notes && notes.trim() !== ''
     ? `📝 *Catatan Khusus:*\n${notes.trim()}`
     : `📝 *Catatan Khusus:* (Tidak ada catatan)`;
 
-  return `Halo FoodFish Malang! 🐟✨
+  return `Halo Marinasi Pak ABIL Malang! 🐟✨
 Saya ingin memesan produk ikan marinasi siap masak dengan rincian berikut:
 
 ${line}
@@ -89,7 +89,7 @@ _Ongkos kirim akan dikonfirmasi oleh penjual berdasarkan titik pengantaran di Ma
  */
 export const buildSingleProductWhatsAppMessage = (product, quantity = 1) => {
   const subtotal = product.price * quantity;
-  return `Halo FoodFish Malang! 🐟
+  return `Halo Marinasi Pak ABIL Malang! 🐟
 Saya tertarik dan ingin menanyakan ketersediaan produk berikut:
 
 • *${product.name}*

@@ -3,7 +3,7 @@ export const CATEGORIES = [
     id: "all",
     name: "Semua Produk",
     slug: "semua",
-    description: "Seluruh pilihan ikan marinasi dan siap masak FoodFish"
+    description: "Seluruh pilihan ikan marinasi dan olahan siap masak Marinasi Pak ABIL di Malang"
   },
   {
     id: "bumbu-kuning",
@@ -27,6 +27,6 @@ export const CATEGORIES = [
     id: "paket-keluarga",
     name: "Paket Hemat Keluarga",
     slug: "paket-hemat-keluarga",
-    description: "Porsi hemat aneka varian ikan untuk stok makan harian praktis"
+    description: "Porsi hemat aneka varian ikan untuk stok makan harian praktis keluarga Malang Raya"
   }
 ];

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Halaman Utama & Navigasi -->
   <url>
     <loc>https://foodfish-malang.vercel.app/</loc>
     <priority>1.0</priority>
@@ -7,6 +8,11 @@
   </url>
   <url>
     <loc>https://foodfish-malang.vercel.app/produk</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel</loc>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -21,13 +27,107 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://foodfish-malang.vercel.app/artikel</loc>
+    <loc>https://foodfish-malang.vercel.app/kontak</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 10 Halaman One-Page Artikel Panduan Memasak & Edukasi -->
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/tips-menggoreng-ikan-marinasi-agar-garing-tidak-lengket</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/cara-menyimpan-ikan-berbumbu-di-freezer-tahan-lama</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/3-resep-sambal-pendamping-ikan-bakar-dan-goreng</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/cara-memanggang-ikan-marinasi-pakai-teflon-anti-gosong</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/manfaat-konsumsi-ikan-air-tawar-dan-laut-untuk-keluarga</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/resep-olahan-fillet-dori-garlic-menu-cepat-10-menit</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/rahasia-bumbu-kuning-gurame-meresap-tanpa-bau-tanah</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/panduan-food-prep-mingguan-lauk-ikan-untuk-ibu-bekerja</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/ikan-segar-pasar-vs-ikan-marinasi-siap-masak-mana-lebih-hemat</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/artikel/resep-bandeng-bakar-cabut-duri-sambal-kecap-nikmat</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Halaman Produk Detail -->
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/gurame-bumbu-kuning-rempah</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://foodfish-malang.vercel.app/kontak</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://foodfish-malang.vercel.app/produk/nila-marinasi-bakar-madu-jimbaran</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/lele-marinasi-ketumbar-bawang</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/fillet-dori-bumbu-garlic-butter-lemon</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/bandeng-cabut-duri-marinasi-kunyit</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/tongkol-suwir-bumbu-balado-pedas</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/udang-vaname-marinasi-garlic-butter</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/paket-komplit-keluarga-hemat-3-varian</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://foodfish-malang.vercel.app/produk/salmon-trout-marinasi-teriyaki</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

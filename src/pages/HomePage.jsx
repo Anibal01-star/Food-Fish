@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -7,12 +7,13 @@ import {
   Clock, 
   Sparkles, 
   Flame, 
-  CheckCircle2, 
   Package, 
   Truck, 
   PhoneCall, 
   ChefHat,
-  HeartHandshake
+  HeartHandshake,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard.jsx';
 import { CategoryCard } from '../components/CategoryCard.jsx';
@@ -28,9 +29,41 @@ export const HomePage = () => {
   const mainCategories = CATEGORIES.filter((c) => c.id !== 'all');
   const previewArticles = ARTICLES.slice(0, 3);
 
+  const [openFaq, setOpenFaq] = useState(null);
+
+  useEffect(() => {
+    document.title = "Marinasi Pak ABIL – Jual Ikan Marinasi Malang";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Temukan ikan marinasi siap masak dari Marinasi Pak ABIL. Praktis, lezat, dan cocok untuk menu harian. Pesan online untuk area Malang Raya melalui website atau WhatsApp.'
+      );
+    }
+  }, []);
+
   const heroWaUrl = createWhatsAppUrl(
-    "Halo FoodFish Malang! Saya ingin pesan ikan marinasi siap masak. Boleh minta info stok dan rekomendasi menu hari ini?"
+    "Halo Marinasi Pak ABIL Malang! Saya ingin memesan ikan marinasi siap masak. Boleh minta info stok dan rekomendasi menu hari ini?"
   );
+
+  const homeFaqs = [
+    {
+      q: "Berapa lama ikan marinasi Marinasi Pak ABIL tahan disimpan?",
+      a: "Dalam kemasan vacuum pack tertutup rapat di dalam freezer suhu -18°C, produk tahan hingga 2 bulan dengan kualitas rasa dan kesegaran rempah yang terjaga. Di kulkas bawah (chiller), disarankan dimasak dalam waktu 2-3 hari."
+    },
+    {
+      q: "Apakah perlu menambahkan bumbu lagi saat hendak menggoreng atau membakar?",
+      a: "Tidak perlu sama sekali. Ikan telah dimarinasi secara merata dengan racikan rempah nusantara alami hingga ke serat tulang terdalam. Tinggal buka kemasan plastik, panaskan minyak atau teflon, dan langsung masak."
+    },
+    {
+      q: "Bagaimana jangkauan pengiriman di wilayah Malang Raya?",
+      a: "Kami melayani pengiriman menjangkau area Kota Malang, Kabupaten Malang, dan Kota Batu menggunakan kurir instan atau ojek online demi menjaga suhu dingin dan kesegaran produk sampai di tangan Anda."
+    },
+    {
+      q: "Bagaimana cara memesan melalui website dan WhatsApp?",
+      a: "Anda cukup memilih ikan marinasi yang diinginkan di halaman katalog, masukkan ke keranjang belanja, lalu klik tombol 'Konfirmasi via WhatsApp' pada saat checkout untuk terhubung langsung dengan penjual."
+    }
+  ];
 
   return (
     <div className="home-page">
@@ -39,23 +72,22 @@ export const HomePage = () => {
         <div className="hero-container">
           <div className="hero-text-content">
             <div className="hero-pill">
-              <Sparkles size={16} color="var(--color-ocean-blue)" />
+              <Sparkles size={16} color="var(--color-primary)" />
               <span>Solusi Praktis Kuliner Keluarga di Malang Raya</span>
             </div>
 
             <h1 className="hero-title">
-              Ikan Berbumbu, <br />
-              <span className="highlight">Praktis Tinggal Masak.</span>
+              Ikan Marinasi Siap Masak <br />
+              <span className="highlight">dari Marinasi Pak ABIL</span>
             </h1>
 
             <p className="hero-description">
-              Nikmati kelezatan ikan segar pilihan yang telah dimarinasi dengan racikan rempah nusantara alami. 
-              Bersih higienis, bumbu meresap sampai ke tulang, siap digoreng atau dibakar hanya dalam hitungan menit tanpa repot mengulek bumbu.
+              Temukan ikan marinasi siap masak dari Marinasi Pak ABIL. Segar, higienis, dan berbalut racikan bumbu rempah nusantara alami. Praktis tinggal goreng atau bakar tanpa repot membersihkan sisik dan mengulek bumbu.
             </p>
 
             <div className="hero-cta-group">
-              <Link to="/produk" className="btn btn-primary">
-                <span>Lihat Katalog Produk</span>
+              <Link to="/produk" className="btn btn-primary" title="Lihat Pilihan Produk Marinasi">
+                <span>Lihat Produk</span>
                 <ArrowRight size={18} />
               </Link>
 
@@ -65,9 +97,10 @@ export const HomePage = () => {
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp"
                 id="hero-wa-btn"
+                title="Pesan Langsung via WhatsApp"
               >
                 <MessageCircle size={18} />
-                <span>Pesan via WhatsApp</span>
+                <span>Hubungi WhatsApp</span>
               </a>
             </div>
 
@@ -78,11 +111,11 @@ export const HomePage = () => {
               </div>
               <div className="trust-item">
                 <Clock size={20} className="trust-item-icon" />
-                <span>Masak Cepat 10 Menit</span>
+                <span>Siap Masak 10 Menit</span>
               </div>
               <div className="trust-item">
                 <Truck size={20} className="trust-item-icon" />
-                <span>Area Malang Raya</span>
+                <span>Pengiriman Malang Raya</span>
               </div>
             </div>
           </div>
@@ -91,16 +124,19 @@ export const HomePage = () => {
             <div className="hero-image-card">
               <img
                 src="/images/hero-ikan-marinasi.png"
-                alt="Ikan berbumbu marinasi rempah segar siap masak dengan jeruk nipis dan cabai"
+                alt="Ikan berbumbu marinasi rempah segar siap masak dari Marinasi Pak ABIL"
                 className="hero-image"
                 loading="eager"
+                fetchPriority="high"
+                width="540"
+                height="440"
               />
               <div className="hero-floating-badge">
                 <div className="floating-icon-wrap">
-                  <Flame size={22} color="var(--color-coral-orange)" />
+                  <Flame size={22} color="var(--color-accent)" />
                 </div>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-deep-navy)' }}>
+                  <div style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--color-text-primary)' }}>
                     Bumbu Meresap Sempurna
                   </div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>
@@ -113,19 +149,19 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* WhatsApp Configuration Notice for users/testers */}
+      {/* WhatsApp Configuration Notice */}
       <div style={{ maxWidth: 'var(--container-max)', margin: '1.5rem auto 0', padding: '0 1.5rem' }}>
         <WhatsAppNotice compact={true} />
       </div>
 
-      {/* 2. Product Category Cards */}
+      {/* 2. Pilihan Ikan Marinasi (Kategori) */}
       <section className="section section-cream">
         <div className="section-container">
           <div className="section-header">
-            <span className="section-tag">Kategori Favorit</span>
-            <h2 className="section-title">Pilihan Olahan Ikan Siap Masak</h2>
+            <span className="section-tag">Kategori Produk</span>
+            <h2 className="section-title">Pilihan Ikan Marinasi</h2>
             <p className="section-desc">
-              Pilih varian rasa bumbu favorit keluarga Anda, mulai dari rempah kuning tradisional hingga bumbu bakar manis gurih.
+              Pilih aneka varian ikan mentah berbumbu siap masak sesuai selera keluarga, dari bumbu kuning gurih hingga bakar madu manis sedap.
             </p>
           </div>
 
@@ -137,14 +173,14 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 3. Featured Products Grid */}
+      {/* 3. Produk Favorit Pelanggan */}
       <section className="section section-white">
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Menu Terlaris</span>
-            <h2 className="section-title">Produk Marinasi Rekomendasi</h2>
+            <h2 className="section-title">Produk Favorit Pelanggan</h2>
             <p className="section-desc">
-              Menu favorit pelanggan setia FoodFish di Malang Raya. Daging empuk berpadu rempah kaya rasa.
+              Menu pilihan pelanggan Marinasi Pak ABIL di Malang Raya. Daging empuk, bebas bau tanah, dan gurih meresap.
             </p>
           </div>
 
@@ -156,28 +192,28 @@ export const HomePage = () => {
 
           <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             <Link to="/produk" className="btn btn-outline" style={{ padding: '0.85rem 2rem' }}>
-              <span>Jelajahi Seluruh Menu ({CATEGORIES.length > 0 ? 'Katalog Lengkap' : ''})</span>
+              <span>Lihat Seluruh Katalog Ikan Marinasi</span>
               <ArrowRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 4. FoodFish Benefits Section */}
+      {/* 4. Mengapa Memilih Marinasi Pak ABIL? */}
       <section className="section section-cream">
         <div className="section-container">
           <div className="section-header">
-            <span className="section-tag">Keunggulan FoodFish</span>
-            <h2 className="section-title">Mengapa Memilih Ikan Marinasi Kami?</h2>
+            <span className="section-tag">Keunggulan Kualitas</span>
+            <h2 className="section-title">Mengapa Memilih Marinasi Pak ABIL?</h2>
             <p className="section-desc">
-              Kami memahami kesibukan Anda. FoodFish hadir memberi solusi lauk sehat, bergizi, dan lezat tanpa menyita waktu di dapur.
+              Kami berkomitmen menyajikan ikan marinasi berkualitas tinggi untuk memudahkan santapan sehat keluarga tanpa repot di dapur.
             </p>
           </div>
 
           <div className="grid-3">
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Sparkles size={26} />
+                <Sparkles size={26} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Bumbu Rempah Alami Meresap</h3>
               <p className="benefit-desc">
@@ -187,65 +223,65 @@ export const HomePage = () => {
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <ChefHat size={26} />
+                <ChefHat size={26} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Bersih, Higienis & Siap Olah</h3>
               <p className="benefit-desc">
-                Ikan telah dibersihkan sisik, kotoran perut, dan insangnya secara teliti dengan standar kebersihan tinggi sebelum dibumbui.
+                Ikan telah disiangi secara teliti dari sisik, insang, dan kotoran organ dalam sebelum dimarinasi dengan standar kebersihan tinggi.
               </p>
             </div>
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Clock size={26} />
+                <Clock size={26} color="var(--color-primary)" />
               </div>
-              <h3 className="benefit-title">Praktis Matang 10 Menit</h3>
+              <h3 className="benefit-title">Praktis Siap Masak 10 Menit</h3>
               <p className="benefit-desc">
-                Tidak perlu repot mengulek bumbu atau mencuci ikan berlumur darah. Cukup panaskan minyak atau teflon dan sajikan hangat.
+                Menghemat waktu dapur Anda di pagi atau malam hari. Cukup goreng atau bakar teflon tanpa perlu mengulek bumbu.
               </p>
             </div>
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Package size={26} />
+                <Package size={26} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Kemasan Kedap Udara (Vacuum Pack)</h3>
               <p className="benefit-desc">
-                Dikemas kedap udara menjaga kualitas daging tetap juicy dan bumbu tidak terkontaminasi bau lain saat disimpan di freezer.
+                Teknologi kemasan kedap udara menjaga kesegaran sari daging dan mencegah bau bercampur dengan bahan lain di lemari es.
               </p>
             </div>
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <HeartHandshake size={26} />
+                <HeartHandshake size={26} color="var(--color-primary)" />
               </div>
-              <h3 className="benefit-title">Aman untuk Seluruh Anggota Keluarga</h3>
+              <h3 className="benefit-title">Pilihan Tanpa Duri untuk Anak</h3>
               <p className="benefit-desc">
-                Tersedia varian rasa gurih tidak pedas dan pilihan ikan bebas duri (fillet) yang aman dan sangat disukai anak-anak.
+                Tersedia varian fillet dori dan bandeng cabut duri yang aman dikonsumsi anak-anak dan lansia tanpa khawatir tersedak duri.
               </p>
             </div>
 
             <div className="benefit-card">
               <div className="benefit-icon-wrap">
-                <Truck size={26} />
+                <Truck size={26} color="var(--color-primary)" />
               </div>
               <h3 className="benefit-title">Pengiriman Cepat Malang Raya</h3>
               <p className="benefit-desc">
-                Melayani pengantaran cepat ke Kota Malang, Kabupaten Malang, dan Kota Batu dengan kurir atau ojek online terpercaya.
+                Melayani pengiriman tepat waktu ke area Kota Malang, Kabupaten Malang, dan Kota Batu dengan kurir terpercaya.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Three-Step Ordering Guide */}
+      {/* 5. Cara Pemesanan */}
       <section className="section section-white">
         <div className="section-container">
           <div className="section-header">
-            <span className="section-tag">Cara Pemesanan</span>
-            <h2 className="section-title">3 Langkah Mudah Menikmati FoodFish</h2>
+            <span className="section-tag">Alur Belanja</span>
+            <h2 className="section-title">Cara Pemesanan</h2>
             <p className="section-desc">
-              Pesan makanan lezat untuk keluarga tidak pernah semudah ini.
+              Pesan ikan marinasi segar pilihan untuk stok lauk harian melalui 3 langkah mudah:
             </p>
           </div>
 
@@ -253,54 +289,130 @@ export const HomePage = () => {
             <div className="step-card">
               <span className="step-number">01</span>
               <div className="step-icon-wrap">
-                <Package size={24} />
+                <Package size={24} color="var(--color-primary)" />
               </div>
-              <h3 className="step-title">Pilih Ikan & Bumbu Favorit</h3>
+              <h3 className="step-title">Pilih Menu di Website</h3>
               <p className="step-desc">
-                Jelajahi katalog kami, pilih varian ikan marinasi sesuai selera keluarga, lalu masukkan ke dalam keranjang belanja.
+                Buka katalog produk Marinasi Pak ABIL, pilih varian ikan berbumbu sesuai selera keluarga, lalu masukkan ke keranjang belanja.
               </p>
             </div>
 
             <div className="step-card">
               <span className="step-number">02</span>
               <div className="step-icon-wrap">
-                <PhoneCall size={24} />
+                <PhoneCall size={24} color="var(--color-primary)" />
               </div>
               <h3 className="step-title">Konfirmasi via WhatsApp</h3>
               <p className="step-desc">
-                Kirim format pesanan otomatis langsung ke WhatsApp resmi penjual. Seller akan mengonfirmasi stok dan tarif kurir.
+                Kirim detail pesanan otomatis ke WhatsApp admin. Penjual akan mengonfirmasi ketersediaan stok dan total biaya pengantaran.
               </p>
             </div>
 
             <div className="step-card">
               <span className="step-number">03</span>
               <div className="step-icon-wrap">
-                <Flame size={24} />
+                <Flame size={24} color="var(--color-primary)" />
               </div>
-              <h3 className="step-title">Ikan Diantar & Siap Masak</h3>
+              <h3 className="step-title">Pesanan Diantar & Siap Masak</h3>
               <p className="step-desc">
-                Pesanan dikirimkan dalam kondisi beku/dingin higienis siap olah. Goreng atau bakar langsung untuk santapan lezat!
+                Ikan marinasi dikirim dalam kondisi dingin higienis. Simpan di freezer atau langsung masak kapan pun Anda inginkan!
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. Promotional-Style Banner (Without fabricated discounts) */}
-      <section className="section" style={{ paddingTop: 0, paddingBottom: '5rem' }}>
+      {/* 6. Pertanyaan yang Sering Diajukan (FAQ) */}
+      <section className="section section-cream">
+        <div className="section-container" style={{ maxWidth: '850px' }}>
+          <div className="section-header">
+            <span className="section-tag">Pusat Informasi</span>
+            <h2 className="section-title">Pertanyaan yang Sering Diajukan</h2>
+            <p className="section-desc">
+              Informasi lengkap seputar daya tahan produk, pengolahan, dan layanan pengiriman di Malang Raya.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {homeFaqs.map((faq, idx) => (
+              <div
+                key={idx}
+                style={{
+                  backgroundColor: 'var(--color-surface)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--shadow-sm)'
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  style={{
+                    width: '100%',
+                    padding: '1.25rem 1.5rem',
+                    textAlign: 'left',
+                    background: 'none',
+                    border: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '1rem',
+                    cursor: 'pointer',
+                    color: 'var(--color-text-primary)',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 700,
+                    fontSize: '1.05rem'
+                  }}
+                  aria-expanded={openFaq === idx}
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <HelpCircle size={18} color="var(--color-primary)" />
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    size={20}
+                    style={{
+                      transform: openFaq === idx ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.25s ease',
+                      flexShrink: 0
+                    }}
+                  />
+                </button>
+                {openFaq === idx && (
+                  <div style={{
+                    padding: '0 1.5rem 1.25rem',
+                    color: 'var(--color-text-secondary)',
+                    fontSize: '0.96rem',
+                    lineHeight: 1.7,
+                    borderTop: '1px solid var(--color-border-subtle)',
+                    paddingTop: '1rem'
+                  }}>
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Promotional Service Banner */}
+      <section className="section" style={{ paddingTop: 0, paddingBottom: '4rem' }}>
         <div className="section-container">
           <div className="promo-banner">
             <div>
               <span style={{
                 display: 'inline-block',
-                backgroundColor: 'var(--color-coral-orange)',
+                backgroundColor: 'var(--color-accent)',
                 color: '#FFFFFF',
                 fontSize: '0.8rem',
                 fontWeight: 700,
-                padding: '0.3rem 0.8rem',
+                padding: '0.35rem 0.9rem',
                 borderRadius: '999px',
                 marginBottom: '1rem',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
               }}>
                 Layanan Segar Malang Raya
               </span>
@@ -309,13 +421,13 @@ export const HomePage = () => {
               </h2>
               <p className="promo-desc">
                 Tidak perlu repot ke pasar pagi atau berkutat mencuci ikan berbau amis. 
-                Simpan produk FoodFish di freezer Anda, siap disajikan hangat kapanpun keluarga lapar.
+                Simpan produk Marinasi Pak ABIL di freezer Anda, siap disajikan hangat kapan pun keluarga lapar.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/produk" className="btn btn-coral">
                   Pesan Menu Praktis Sekarang
                 </Link>
-                <Link to="/tentang-kami" className="btn btn-outline" style={{ color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.4)' }}>
+                <Link to="/tentang-kami" className="btn btn-outline" style={{ color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.5)' }}>
                   Pelajari Lebih Lanjut
                 </Link>
               </div>
@@ -326,16 +438,16 @@ export const HomePage = () => {
                 background: 'rgba(255, 255, 255, 0.08)',
                 padding: '2rem',
                 borderRadius: 'var(--radius-lg)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 backdropFilter: 'blur(10px)'
               }}>
-                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--color-fresh-mint)', marginBottom: '0.5rem' }}>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
                   Coverage Area
                 </div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.75rem' }}>
+                <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.75rem' }}>
                   Malang Raya
                 </div>
-                <p style={{ fontSize: '0.9rem', color: '#D3E4F0', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.9rem', color: '#F6EDE4', margin: 0, lineHeight: 1.5 }}>
                   Pengiriman cepat menjangkau Kota Malang, Kabupaten Malang, dan Kota Batu.
                 </p>
               </div>
@@ -344,7 +456,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 7. Article Previews */}
+      {/* 8. Inspirasi Dapur: Tips & Resep Olahan Ikan */}
       <section className="section section-cream">
         <div className="section-container">
           <div className="section-header">

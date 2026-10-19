@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GALLERY_IMAGES } from '../data/gallery.js';
 import { 
@@ -19,8 +19,20 @@ export const GalleryPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
 
+  useEffect(() => {
+    document.title = "Galeri Olahan Ikan Marinasi Malang | Marinasi Pak ABIL";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        'content',
+        'Lihat koleksi foto dokumentasi ikan marinasi segar, proses racikan bumbu rempah alami, kemasan vacuum pack, dan sajian matang dari Marinasi Pak ABIL Malang.'
+      );
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   const categories = [
-    { id: 'all', label: 'Semua Foto (PNG)' },
+    { id: 'all', label: 'Semua Foto Olahan' },
     { id: 'produk', label: 'Varian Ikan Marinasi' },
     { id: 'dapur', label: 'Proses Dapur & Rempah' },
     { id: 'sajian', label: 'Hasil Masakan Siap Santap' }
@@ -57,22 +69,22 @@ export const GalleryPage = () => {
       {/* Header Banner */}
       <div className="page-header">
         <div className="page-header-content">
-          <span className="section-tag">Galeri Foto FoodFish</span>
-          <h1 className="page-title">Koleksi Visual Produk & Dapur</h1>
+          <span className="section-tag">Galeri Marinasi Pak ABIL</span>
+          <h1 className="page-title">Koleksi Visual Produk & Dapur Olahan</h1>
           <p className="page-subtitle">
-            Jelajahi seluruh dokumentasi foto ikan segar, proses racikan bumbu rempah alami, pengemasan vacuum, dan hasil sajian siap masak dalam format PNG berkualitas tinggi.
+            Jelajahi seluruh dokumentasi foto ikan segar, proses racikan bumbu rempah alami nusantara, pengemasan vacuum higienis, dan hasil sajian siap masak dari Marinasi Pak ABIL.
           </p>
         </div>
       </div>
 
       <div className="section-container" style={{ padding: '3rem 1.5rem 5rem' }}>
-        {/* PNG Format Announcement Bar */}
+        {/* Quality Announcement Bar */}
         <div className="notice-box info" style={{ marginBottom: '2.5rem' }}>
-          <Sparkles size={20} color="#1877A8" className="notice-icon" />
+          <Sparkles size={20} color="var(--color-primary)" className="notice-icon" />
           <div className="notice-content">
-            <div className="notice-title">Semua Aset Gambar Tersedia Dalam Format PNG</div>
-            <p style={{ margin: 0, fontSize: '0.88rem' }}>
-              Seluruh foto pada katalog dan galeri ini disimpan secara lokal dalam format <strong>.PNG</strong> berkualitas tinggi di folder publik. Anda dapat melihat pratinjau resolusi penuh maupun mengunduh gambar PNG untuk keperluan informasi dan promosi.
+            <div className="notice-title">Dokumentasi Asli Produk Ikan Marinasi</div>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--color-text-secondary)' }}>
+              Seluruh foto pada katalog dan galeri ini merupakan dokumentasi produk ikan marinasi dan kreasi masakan dari <strong>Marinasi Pak ABIL</strong> untuk pelanggan di Malang Raya.
             </p>
           </div>
         </div>

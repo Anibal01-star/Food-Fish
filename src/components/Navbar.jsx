@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { ShoppingBag, Fish, Menu, X, MessageCircle } from 'lucide-react';
-import { isWhatsAppConfigured, createWhatsAppUrl } from '../config/whatsapp.js';
+import { createWhatsAppUrl } from '../config/whatsapp.js';
 
 export const Navbar = () => {
   const { totalItemCount } = useCart();
@@ -11,21 +11,23 @@ export const Navbar = () => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   // WhatsApp quick greeting message
-  const quickWaUrl = createWhatsAppUrl("Halo FoodFish Malang! Saya ingin bertanya mengenai katalog ikan marinasi siap masak hari ini.");
+  const quickWaUrl = createWhatsAppUrl("Halo Marinasi Pak ABIL Malang! Saya ingin bertanya mengenai stok dan katalog ikan marinasi siap masak hari ini.");
 
   return (
     <header className="navbar">
       <div className="navbar-container">
         {/* Brand Logo */}
-        <Link to="/" className="brand-logo" onClick={closeMobileMenu}>
+        <Link to="/" className="brand-logo" onClick={closeMobileMenu} title="Marinasi Pak ABIL — Jual Ikan Marinasi Malang">
           <div className="brand-icon">
             <Fish size={22} strokeWidth={2.5} />
           </div>
-          <span>Food<span style={{ color: 'var(--color-ocean-blue)' }}>Fish</span></span>
+          <span>
+            Marinasi <span style={{ color: 'var(--color-primary)' }}>Pak ABIL</span>
+          </span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav>
+        <nav aria-label="Navigasi Utama">
           <ul className="nav-links">
             <li>
               <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
@@ -34,12 +36,12 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink to="/produk" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                Produk
+                Katalog Produk
               </NavLink>
             </li>
             <li>
               <NavLink to="/galeri" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                Galeri Foto
+                Galeri Olahan
               </NavLink>
             </li>
             <li>
@@ -49,12 +51,12 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink to="/artikel" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                Artikel & Tips
+                Artikel & Resep
               </NavLink>
             </li>
             <li>
               <NavLink to="/kontak" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                Kontak
+                Kontak & Lokasi
               </NavLink>
             </li>
           </ul>
@@ -76,8 +78,8 @@ export const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp btn-sm"
-            style={{ display: 'none' }} /* shown on medium+ screens */
             id="nav-wa-btn"
+            title="Chat WhatsApp Marinasi Pak ABIL"
           >
             <MessageCircle size={16} />
             <span>Pesan WA</span>
@@ -88,6 +90,8 @@ export const Navbar = () => {
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Tutup Menu" : "Buka Menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -96,21 +100,12 @@ export const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div style={{
-          backgroundColor: '#FFFFFF',
-          borderBottom: '1px solid var(--color-border)',
-          padding: '1.25rem 1.5rem',
-          boxShadow: 'var(--shadow-md)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
+        <nav id="mobile-nav-menu" className="mobile-nav-menu" aria-label="Navigasi Seluler">
           <NavLink 
             to="/" 
             end 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
             Beranda
           </NavLink>
@@ -118,56 +113,50 @@ export const Navbar = () => {
             to="/produk" 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
-            Produk Katalog
+            Katalog Produk Ikan Marinasi
           </NavLink>
           <NavLink 
             to="/galeri" 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
-            Galeri Foto (PNG)
+            Galeri Olahan & Masakan
           </NavLink>
           <NavLink 
             to="/tentang-kami" 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
-            Tentang Kami
+            Tentang Marinasi Pak ABIL
           </NavLink>
           <NavLink 
             to="/artikel" 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
-            Artikel & Tips Memasak
+            Artikel & Panduan Memasak
           </NavLink>
           <NavLink 
             to="/kontak" 
             onClick={closeMobileMenu}
             className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            style={{ padding: '0.4rem 0' }}
           >
-            Kontak & Lokasi
+            Kontak & Pengiriman Malang
           </NavLink>
 
-          <div style={{ paddingTop: '0.5rem', borderTop: '1px solid var(--color-border)' }}>
+          <div className="mobile-nav-cta">
             <a
               href={quickWaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp"
-              style={{ width: '100%', justifyContent: 'center' }}
             >
               <MessageCircle size={18} />
               <span>Chat WhatsApp Penjual</span>
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );
