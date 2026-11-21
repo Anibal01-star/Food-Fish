@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://foodfish-malang.vercel.app/sitemap.xml
+Sitemap: https://marinasi-malang-pakabil.vercel.app/sitemap.xml

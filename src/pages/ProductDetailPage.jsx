@@ -40,7 +40,7 @@ export const ProductDetailPage = () => {
     if (product) {
       const title = `${product.name} – Ikan Marinasi Malang | Marinasi Pak ABIL`;
       const description = `${product.shortDescription || product.description} Pesan sekarang dari Marinasi Pak ABIL untuk area Malang Raya via website & WhatsApp.`;
-      const productUrl = `https://foodfish-malang.vercel.app/produk/${product.slug}`;
+      const productUrl = `https://marinasi-malang-pakabil.vercel.app/produk/${product.slug}`;
 
       document.title = title;
 
@@ -58,10 +58,10 @@ export const ProductDetailPage = () => {
       updateMetaTag('meta[property="og:title"]', 'property', 'og:title', title);
       updateMetaTag('meta[property="og:description"]', 'property', 'og:description', description);
       updateMetaTag('meta[property="og:url"]', 'property', 'og:url', productUrl);
-      updateMetaTag('meta[property="og:image"]', 'property', 'og:image', `https://foodfish-malang.vercel.app${product.image}`);
+      updateMetaTag('meta[property="og:image"]', 'property', 'og:image', `https://marinasi-malang-pakabil.vercel.app${product.image}`);
       updateMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
       updateMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
-      updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', `https://foodfish-malang.vercel.app${product.image}`);
+      updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', `https://marinasi-malang-pakabil.vercel.app${product.image}`);
 
       const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
       canonicalLink.setAttribute('rel', 'canonical');
@@ -118,7 +118,7 @@ export const ProductDetailPage = () => {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": product.name,
-    "image": `https://foodfish-malang.vercel.app${product.image}`,
+    "image": `https://marinasi-malang-pakabil.vercel.app${product.image}`,
     "description": product.description,
     "brand": {
       "@type": "Brand",
@@ -126,7 +126,7 @@ export const ProductDetailPage = () => {
     },
     "offers": {
       "@type": "Offer",
-      "url": `https://foodfish-malang.vercel.app/produk/${product.slug}`,
+      "url": `https://marinasi-malang-pakabil.vercel.app/produk/${product.slug}`,
       "priceCurrency": "IDR",
       "price": product.price,
       "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
@@ -134,7 +134,7 @@ export const ProductDetailPage = () => {
     }
   };
 
-  const productAlt = product.alt || `Ikan ${product.name} siap masak dari Marinasi Pak ABIL Malang`;
+  const productAlt = product.alt || `Jual ${product.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`;
 
   return (
     <div className="product-detail-page">
@@ -243,9 +243,9 @@ export const ProductDetailPage = () => {
 
             {/* Description */}
             <div className="detail-description">
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: 'var(--color-deep-navy)' }}>
+              <h2 style={{ fontSize: '1.25rem', marginBottom: '0.6rem', color: 'var(--color-deep-navy)', fontWeight: 800 }}>
                 Deskripsi Produk
-              </h3>
+              </h2>
               <p style={{ lineHeight: 1.7, marginBottom: '1rem' }}>
                 {product.description}
               </p>
@@ -257,12 +257,25 @@ export const ProductDetailPage = () => {
                   borderRadius: 'var(--radius-md)',
                   fontSize: '0.88rem',
                   color: 'var(--color-text-secondary)',
-                  border: '1px solid var(--color-border-subtle)'
+                  border: '1px solid var(--color-border-subtle)',
+                  marginBottom: '1rem'
                 }}>
                   <strong style={{ color: 'var(--color-deep-navy)' }}>Komposisi Rempah: </strong>
                   {product.ingredients}
                 </div>
               )}
+
+              <div style={{
+                padding: '0.85rem 1rem',
+                backgroundColor: '#F8FAFC',
+                borderRadius: 'var(--radius-md)',
+                fontSize: '0.88rem',
+                color: 'var(--color-text-secondary)',
+                lineHeight: 1.6,
+                border: '1px solid var(--color-border)'
+              }}>
+                💡 Ingin panduan cara mengolah atau resep pendamping nikmat? Baca kumpulan <Link to="/artikel" style={{ color: 'var(--color-ocean-blue)', fontWeight: 700, textDecoration: 'underline' }}>Artikel & Tips Memasak Ikan Marinasi</Link> kami.
+              </div>
             </div>
 
             {/* Quantity Selector & Action Buttons */}

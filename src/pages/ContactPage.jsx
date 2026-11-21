@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Phone, 
   MapPin, 
@@ -26,12 +27,12 @@ export const ContactPage = () => {
   const [quickQuestion, setQuickQuestion] = useState('');
 
   useEffect(() => {
-    document.title = "Kontak & Layanan Pemesanan Malang | Marinasi Pak ABIL";
+    document.title = "Kontak & Lokasi Layanan Malang | Marinasi Pak ABIL";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Hubungi Marinasi Pak ABIL untuk pemesanan ikan marinasi siap masak di Malang Raya. Layanan responsif melalui WhatsApp dan website.'
+        'Hubungi Marinasi Pak ABIL untuk pemesanan ikan marinasi siap masak di Malang Raya. Layanan responsif melalui WhatsApp resmi dan Google Business Profile.'
       );
     }
     window.scrollTo(0, 0);
@@ -273,6 +274,104 @@ export const ContactPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Google Business Profile & Google Maps Integration */}
+        <section style={{ marginBottom: '5rem' }} aria-labelledby="gbp-heading">
+          <div className="section-header" style={{ marginBottom: '2.5rem' }}>
+            <span className="section-tag">Google Business Profile & Peta</span>
+            <h2 id="gbp-heading" className="section-title">Lokasi & Area Layanan Marinasi Pak ABIL</h2>
+            <p className="section-desc">
+              Temukan profil bisnis dan jangkauan layanan pesan antar ikan marinasi segar kami di seluruh area Malang Raya.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '2.5rem',
+            backgroundColor: '#FFFFFF',
+            borderRadius: 'var(--radius-xl)',
+            border: '1px solid var(--color-border)',
+            padding: '2rem',
+            boxShadow: 'var(--shadow-sm)'
+          }}>
+            {/* Embed Map */}
+            <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', minHeight: '320px', border: '1px solid var(--color-border-subtle)' }}>
+              <iframe
+                title="Google Maps Lokasi Layanan Marinasi Pak ABIL Malang"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126438.28469799298!2d112.56174155!3d-7.9786395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6282206340f29%3A0x4027a76e352bbb0!2sKota%20Malang%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '320px', display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            {/* Profile Info Details */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                backgroundColor: 'var(--color-primary-light)',
+                color: 'var(--color-primary)',
+                padding: '0.35rem 0.85rem',
+                borderRadius: '999px',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                marginBottom: '1rem',
+                width: 'fit-content'
+              }}>
+                <CheckCircle2 size={15} />
+                <span>Google Business Profile Terintegrasi</span>
+              </div>
+
+              <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--color-deep-navy)', marginBottom: '0.75rem' }}>
+                Marinasi Pak ABIL – Malang
+              </h3>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.92rem', lineHeight: '1.6', marginBottom: '1.25rem' }}>
+                Penyedia aneka ikan dan seafood berbumbu marinasi siap masak yang melayani pembelian online dengan pengantaran cepat ke seluruh penjuru Malang Raya demi menjaga kesegaran produk.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.75rem', fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)' }}>
+                  <MapPin size={18} color="var(--color-primary)" />
+                  <span><strong>Area Pengiriman:</strong> Kota Malang, Kab. Malang, Kota Batu</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)' }}>
+                  <Clock size={18} color="var(--color-primary)" />
+                  <span><strong>Jam Layanan:</strong> Setiap Hari, 07:00 – 17:00 WIB</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--color-deep-navy)' }}>
+                  <Phone size={18} color="var(--color-primary)" />
+                  <span><strong>Kontak Konfirmasi:</strong> +62 877-9639-7461</span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a
+                  href="https://maps.google.com/?q=Kota+Malang+Jawa+Timur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary btn-sm"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <span>Buka di Google Maps</span>
+                  <ExternalLink size={15} />
+                </a>
+                <Link
+                  to="/produk"
+                  className="btn btn-primary btn-sm"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <span>Lihat Katalog Produk</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>

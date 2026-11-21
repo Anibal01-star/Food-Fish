@@ -76,6 +76,18 @@ export const Footer = () => {
               <span>{BUSINESS_INFO.serviceArea}</span>
             </div>
             <div className="footer-contact-item">
+              <MapPin size={18} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
+              <a 
+                href="https://maps.google.com/?q=Kota+Malang+Jawa+Timur" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'underline' }}
+                title="Lihat Lokasi Layanan di Google Maps & Google Business Profile"
+              >
+                Google Business Profile (Malang)
+              </a>
+            </div>
+            <div className="footer-contact-item">
               <Clock size={18} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
               <span>{BUSINESS_INFO.operationalHours}</span>
             </div>

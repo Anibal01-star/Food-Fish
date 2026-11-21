@@ -34,7 +34,7 @@ export const AboutPage = () => {
       <div className="page-header">
         <div className="page-header-content">
           <span className="section-tag">Mengenal Marinasi Pak ABIL</span>
-          <h1 className="page-title">Cerita & Komitmen Kualitas Kami</h1>
+          <h1 className="page-title">Tentang Marinasi Pak ABIL – Ikan Marinasi Siap Masak Malang</h1>
           <p className="page-subtitle">
             Hadir di Malang Raya untuk memudahkan keluarga menikmati sajian ikan berbumbu rempah lezat, sehat, dan praktis tanpa repot membersihkan sisik.
           </p>
@@ -91,7 +91,7 @@ export const AboutPage = () => {
               }}>
                 <img
                   src="/images/dapur-persiapan.png"
-                  alt="Dapur persiapan pengolahan ikan marinasi higienis Marinasi Pak ABIL"
+                  alt="Proses persiapan dan bumbu ikan marinasi higienis di dapur Marinasi Pak ABIL Malang"
                   width="480"
                   height="420"
                   style={{ width: '100%', height: '420px', objectFit: 'cover' }}

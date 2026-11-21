@@ -11,7 +11,7 @@ export const ArticleCard = ({ article, onReadMore }) => {
       <Link to={`/artikel/${article.slug}`} className="product-image-container" style={{ paddingTop: '60%', display: 'block' }}>
         <img
           src={imageError ? fallbackImage : article.image}
-          alt={article.title}
+          alt={`${article.title} – Panduan Ikan Marinasi Siap Masak Pak ABIL Malang`}
           className="product-image"
           loading="lazy"
           onError={() => setImageError(true)}

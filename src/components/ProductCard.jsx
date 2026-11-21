@@ -25,7 +25,7 @@ export const ProductCard = ({ product }) => {
     }, 600);
   };
 
-  const imageAlt = product.alt || `Ikan ${product.name} siap masak dari Marinasi Pak ABIL Malang`;
+  const imageAlt = product.alt || `Jual ${product.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`;
 
   return (
     <article className="product-card">

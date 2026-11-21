@@ -207,10 +207,15 @@ export const CatalogPage = () => {
 
         {/* Products Grid or Empty State */}
         {filteredProducts.length > 0 ? (
-          <div className="product-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-deep-navy)', marginBottom: '1.5rem' }}>
+              Daftar Menu Ikan & Seafood Bumbu Marinasi
+            </h2>
+            <div className="product-grid">
+              {filteredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
           </div>
         ) : (
           <div className="empty-state">

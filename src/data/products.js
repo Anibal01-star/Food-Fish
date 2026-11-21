@@ -22,7 +22,7 @@ export const PRODUCTS = [
     isFeatured: true,
     inStock: true,
     image: "/images/gurame-bumbu-kuning.png",
-    alt: "Ikan gurame bumbu kuning rempah siap masak dari Marinasi Pak ABIL",
+    alt: "Jual ikan gurame bumbu kuning rempah marinasi siap masak Malang - Pak ABIL",
     tags: ["Best Seller", "Siap Goreng", "Favorit Keluarga"]
   },
   {
@@ -42,7 +42,7 @@ export const PRODUCTS = [
     isFeatured: true,
     inStock: true,
     image: "/images/nila-bakar-madu.png",
-    alt: "Ikan nila marinasi bakar madu khas Jimbaran untuk pelanggan Malang Raya",
+    alt: "Ikan nila marinasi bakar madu khas Jimbaran siap masak Malang - Pak ABIL",
     tags: ["Rekomendasi", "Aroma Bakar", "Praktis"]
   },
   {
@@ -62,7 +62,7 @@ export const PRODUCTS = [
     isFeatured: true,
     inStock: true,
     image: "/images/lele-ketumbar.png",
-    alt: "Ikan lele marinasi bumbu ketumbar dan bawang gurih siap goreng",
+    alt: "Jual ikan lele bumbu marinasi ketumbar bawang siap goreng Malang - Pak ABIL",
     tags: ["Super Crispy", "Menu Harian"]
   },
   {
@@ -82,7 +82,7 @@ export const PRODUCTS = [
     isFeatured: true,
     inStock: true,
     image: "/images/fillet-dori-garlic.png",
-    alt: "Fillet dori marinasi garlic butter dan lemon tanpa duri siap masak",
+    alt: "Fillet ikan dori marinasi garlic butter lemon tanpa duri siap masak Malang",
     tags: ["Tanpa Duri", "Kids Friendly", "Tinggi Protein"]
   },
   {
@@ -102,7 +102,7 @@ export const PRODUCTS = [
     isFeatured: false,
     inStock: true,
     image: "/images/bandeng-cabut-duri.png",
-    alt: "Ikan bandeng cabut duri berbumbu kuning siap masak dari Marinasi Pak ABIL",
+    alt: "Ikan bandeng cabut duri bumbu marinasi kunyit siap masak Malang - Pak ABIL",
     tags: ["Bebas Duri", "Khas Nusantara"]
   },
   {
@@ -122,7 +122,7 @@ export const PRODUCTS = [
     isFeatured: false,
     inStock: true,
     image: "/images/tongkol-balado.png",
-    alt: "Ikan tongkol marinasi bumbu balado pedas siap masak",
+    alt: "Ikan tongkol segar bumbu marinasi balado pedas siap masak Malang - Pak ABIL",
     tags: ["Pedas Mantap", "Lauk Favorit"]
   },
   {
@@ -142,7 +142,7 @@ export const PRODUCTS = [
     isFeatured: false,
     inStock: true,
     image: "/images/udang-garlic-butter.png",
-    alt: "Udang marinasi bumbu bawang putih siap tumis cepat",
+    alt: "Seafood udang vaname bumbu marinasi garlic butter siap masak Malang",
     tags: ["Seafood Segar", "Siap Tumis"]
   },
   {
@@ -162,7 +162,7 @@ export const PRODUCTS = [
     isFeatured: true,
     inStock: true,
     image: "/images/paket-keluarga.png",
-    alt: "Paket hemat aneka varian ikan marinasi siap masak untuk keluarga",
+    alt: "Paket hemat aneka varian ikan marinasi siap masak keluarga Malang - Pak ABIL",
     tags: ["Paket Hemat", "Stok Keluarga", "Terlaris"]
   },
   {
@@ -182,7 +182,7 @@ export const PRODUCTS = [
     isFeatured: false,
     inStock: false,
     image: "/images/salmon-teriyaki.png",
-    alt: "Fillet salmon marinasi saus teriyaki kaya omega-3",
+    alt: "Fillet ikan salmon bumbu marinasi teriyaki siap masak Malang - Pak ABIL",
     tags: ["Stok Habis Sementara", "Omega-3", "Sehat"]
   }
 ];

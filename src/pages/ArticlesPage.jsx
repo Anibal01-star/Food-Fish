@@ -32,7 +32,7 @@ export const ArticlesPage = () => {
       <div className="page-header">
         <div className="page-header-content">
           <span className="section-tag">Dapur & Inspirasi Kuliner</span>
-          <h1 className="page-title">Panduan Memasak & Resep Olahan Ikan</h1>
+          <h1 className="page-title">Panduan Memasak & Resep Ikan Marinasi Malang</h1>
           <p className="page-subtitle">
             Kumpulan artikel panduan memasak ikan marinasi anti lengket, trik memanggang di teflon, rahasia bumbu kuning bebas bau lumpur, dan tips food prep praktis untuk keluarga.
           </p>
@@ -61,6 +61,12 @@ export const ArticlesPage = () => {
         </div>
 
         {/* Articles Grid */}
+        <div className="section-header" style={{ marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--color-deep-navy)', margin: 0 }}>
+            Koleksi Panduan & Tips Dapur Terkini
+          </h2>
+        </div>
+
         <div className="grid-3">
           {filteredArticles.map((article) => (
             <ArticleCard
@@ -148,7 +154,7 @@ export const ArticlesPage = () => {
 
               <img
                 src={activeArticle.image}
-                alt={activeArticle.title}
+                alt={`${activeArticle.title} – Panduan Dapur Marinasi Pak ABIL Malang`}
                 style={{
                   width: '100%',
                   height: '320px',

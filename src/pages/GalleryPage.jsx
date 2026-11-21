@@ -140,7 +140,7 @@ export const GalleryPage = () => {
               >
                 <img
                   src={image.src}
-                  alt={image.title}
+                  alt={image.alt || `${image.title} – Marinasi Pak ABIL Malang`}
                   loading="lazy"
                   style={{
                     position: 'absolute',

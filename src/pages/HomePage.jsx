@@ -32,12 +32,12 @@ export const HomePage = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
-    document.title = "Marinasi Pak ABIL – Jual Ikan Marinasi Malang";
+    document.title = "Jual Ikan Marinasi Malang | Siap Masak – Pak ABIL";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Temukan ikan marinasi siap masak dari Marinasi Pak ABIL. Praktis, lezat, dan cocok untuk menu harian. Pesan online untuk area Malang Raya melalui website atau WhatsApp.'
+        'Cari ikan marinasi siap masak di Malang? Marinasi Pak ABIL menyediakan aneka ikan dan seafood berbumbu pilihan yang praktis, lezat, higienis, dan siap antar Malang Raya.'
       );
     }
   }, []);
@@ -77,16 +77,16 @@ export const HomePage = () => {
             </div>
 
             <h1 className="hero-title">
-              Ikan Marinasi Siap Masak <br />
-              <span className="highlight">dari Marinasi Pak ABIL</span>
+              Jual Ikan Marinasi Malang <br />
+              <span className="highlight">Siap Masak – Pak ABIL</span>
             </h1>
 
             <p className="hero-description">
-              Temukan ikan marinasi siap masak dari Marinasi Pak ABIL. Segar, higienis, dan berbalut racikan bumbu rempah nusantara alami. Praktis tinggal goreng atau bakar tanpa repot membersihkan sisik dan mengulek bumbu.
+              Cari ikan marinasi siap masak di Malang? Marinasi Pak ABIL menyediakan aneka ikan bumbu marinasi dan seafood segar berbalut racikan rempah nusantara alami. Praktis tinggal goreng atau bakar tanpa repot membersihkan sisik dan mengulek bumbu.
             </p>
 
             <div className="hero-cta-group">
-              <Link to="/produk" className="btn btn-primary" title="Lihat Pilihan Produk Marinasi">
+              <Link to="/produk" className="btn btn-primary" title="Lihat Pilihan Produk Ikan Marinasi Malang">
                 <span>Lihat Produk</span>
                 <ArrowRight size={18} />
               </Link>
@@ -124,7 +124,7 @@ export const HomePage = () => {
             <div className="hero-image-card">
               <img
                 src="/images/hero-ikan-marinasi.png"
-                alt="Ikan berbumbu marinasi rempah segar siap masak dari Marinasi Pak ABIL"
+                alt="Jual ikan marinasi Malang siap masak - aneka olahan ikan bumbu marinasi rempah Pak ABIL"
                 className="hero-image"
                 loading="eager"
                 fetchPriority="high"
@@ -159,7 +159,7 @@ export const HomePage = () => {
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Kategori Produk</span>
-            <h2 className="section-title">Pilihan Ikan Marinasi</h2>
+            <h2 className="section-title">Pilihan Ikan & Seafood Bumbu Marinasi</h2>
             <p className="section-desc">
               Pilih aneka varian ikan mentah berbumbu siap masak sesuai selera keluarga, dari bumbu kuning gurih hingga bakar madu manis sedap.
             </p>
@@ -178,7 +178,7 @@ export const HomePage = () => {
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Menu Terlaris</span>
-            <h2 className="section-title">Produk Favorit Pelanggan</h2>
+            <h2 className="section-title">Menu Ikan Marinasi Malang Terlaris</h2>
             <p className="section-desc">
               Menu pilihan pelanggan Marinasi Pak ABIL di Malang Raya. Daging empuk, bebas bau tanah, dan gurih meresap.
             </p>
@@ -279,7 +279,7 @@ export const HomePage = () => {
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Alur Belanja</span>
-            <h2 className="section-title">Cara Pemesanan</h2>
+            <h2 className="section-title">Cara Pemesanan Ikan Marinasi Praktis</h2>
             <p className="section-desc">
               Pesan ikan marinasi segar pilihan untuk stok lauk harian melalui 3 langkah mudah:
             </p>
@@ -461,7 +461,7 @@ export const HomePage = () => {
         <div className="section-container">
           <div className="section-header">
             <span className="section-tag">Inspirasi Dapur</span>
-            <h2 className="section-title">Tips & Resep Olahan Ikan</h2>
+            <h2 className="section-title">Tips & Resep Olahan Ikan Marinasi Malang</h2>
             <p className="section-desc">
               Kiat praktis memasak ikan agar garing renyah, panduan food prep di freezer, dan resep sambal pelengkap hidangan.
             </p>

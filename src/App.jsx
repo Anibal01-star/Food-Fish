@@ -21,44 +21,44 @@ import { NotFoundPage } from './pages/NotFoundPage.jsx';
 
 const routeMeta = {
   '/': {
-    title: 'Marinasi Pak ABIL – Jual Ikan Marinasi Malang',
-    description: 'Temukan ikan marinasi siap masak dari Marinasi Pak ABIL. Praktis, lezat, dan cocok untuk menu harian. Pesan online untuk area Malang Raya melalui website atau WhatsApp.',
-    canonical: 'https://foodfish-malang.vercel.app/'
+    title: 'Jual Ikan Marinasi Malang | Siap Masak – Pak ABIL',
+    description: 'Cari ikan marinasi siap masak di Malang? Marinasi Pak ABIL menyediakan aneka ikan dan seafood berbumbu pilihan yang praktis, lezat, higienis, dan siap antar Malang Raya.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/'
   },
   '/produk': {
     title: 'Katalog Ikan Marinasi Siap Masak Malang | Marinasi Pak ABIL',
-    description: 'Lihat katalog lengkap ikan mentah berbumbu marinasi siap masak dari Marinasi Pak ABIL di Malang Raya. Pilihan gurame, nila, lele, dori, bandeng, dan lebih banyak lagi.',
-    canonical: 'https://foodfish-malang.vercel.app/produk'
+    description: 'Lihat katalog lengkap ikan mentah berbumbu marinasi siap masak dari Marinasi Pak ABIL di Malang Raya. Pilihan gurame bumbu kuning, nila bakar madu, lele ketumbar, fillet dori, dan seafood.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/produk'
   },
   '/keranjang': {
     title: 'Keranjang Belanja | Marinasi Pak ABIL Malang',
     description: 'Review pilihan produk ikan marinasi Anda sebelum dikirim ke area Malang Raya melalui WhatsApp dan website Marinasi Pak ABIL.',
-    canonical: 'https://foodfish-malang.vercel.app/keranjang'
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/keranjang'
   },
   '/checkout': {
     title: 'Checkout & Pemesanan WhatsApp | Marinasi Pak ABIL Malang',
     description: 'Lanjutkan pesanan ikan marinasi siap masak dari Marinasi Pak ABIL melalui checkout yang mudah dan konfirmasi WhatsApp.',
-    canonical: 'https://foodfish-malang.vercel.app/checkout'
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/checkout'
   },
   '/galeri': {
     title: 'Galeri Olahan Ikan Marinasi Malang | Marinasi Pak ABIL',
-    description: 'Jelajahi dokumentasi foto produk dan olahan ikan marinasi siap masak dari Marinasi Pak ABIL untuk pelanggan di Malang Raya.',
-    canonical: 'https://foodfish-malang.vercel.app/galeri'
+    description: 'Jelajahi dokumentasi foto produk, proses rempah alami, kemasan vacuum pack, dan olahan ikan marinasi siap masak dari Marinasi Pak ABIL di Malang Raya.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/galeri'
   },
   '/tentang-kami': {
     title: 'Tentang Kami – Mengenal Marinasi Pak ABIL Malang',
-    description: 'Kenali proses dan komitmen Marinasi Pak ABIL dalam menyajikan ikan mentah berbumbu siap masak berkualitas untuk keluarga di Malang Raya.',
-    canonical: 'https://foodfish-malang.vercel.app/tentang-kami'
+    description: 'Kenali komitmen kualitas dan proses Marinasi Pak ABIL dalam menyajikan ikan mentah berbumbu marinasi siap masak higienis untuk keluarga di Malang Raya.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/tentang-kami'
   },
   '/artikel': {
     title: 'Artikel & Panduan Memasak Ikan Marinasi | Marinasi Pak ABIL Malang',
-    description: 'Baca panduan memasak, tips penyimpanan, dan resep pendamping ikan marinasi dari Marinasi Pak ABIL untuk kebutuhan dapur keluarga.',
-    canonical: 'https://foodfish-malang.vercel.app/artikel'
+    description: 'Baca panduan memasak ikan marinasi anti lengket, tips food prep freezer, dan resep bumbu marinasi dari Marinasi Pak ABIL Malang.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/artikel'
   },
   '/kontak': {
-    title: 'Kontak & Layanan Pemesanan Malang | Marinasi Pak ABIL',
-    description: 'Hubungi Marinasi Pak ABIL untuk pemesanan ikan marinasi siap masak di Malang Raya. Layanan responsif melalui WhatsApp dan website.',
-    canonical: 'https://foodfish-malang.vercel.app/kontak'
+    title: 'Kontak & Lokasi Layanan Malang | Marinasi Pak ABIL',
+    description: 'Hubungi Marinasi Pak ABIL untuk pemesanan ikan marinasi siap masak di Malang Raya. Layanan responsif melalui WhatsApp resmi dan Google Business Profile.',
+    canonical: 'https://marinasi-malang-pakabil.vercel.app/kontak'
   }
 };
 
@@ -67,6 +67,12 @@ function AppSEO() {
 
   useEffect(() => {
     const pathname = location.pathname.replace(/\/+$/, '') || '/';
+    
+    // Skip static route meta update for dynamic detail pages so they manage their own SEO
+    if (pathname.startsWith('/produk/') || pathname.startsWith('/artikel/')) {
+      return;
+    }
+
     const pageMeta = routeMeta[pathname] || routeMeta['/'];
 
     document.title = pageMeta.title;
@@ -84,7 +90,7 @@ function AppSEO() {
     updateMetaTag('meta[name="description"]', 'name', 'description', pageMeta.description);
     updateMetaTag('meta[property="og:title"]', 'property', 'og:title', pageMeta.title);
     updateMetaTag('meta[property="og:description"]', 'property', 'og:description', pageMeta.description);
-    updateMetaTag('meta[property="og:url"]', 'property', 'og:url', `https://foodfish-malang.vercel.app${pathname === '/' ? '' : pathname}`);
+    updateMetaTag('meta[property="og:url"]', 'property', 'og:url', `https://marinasi-malang-pakabil.vercel.app${pathname === '/' ? '' : pathname}`);
     updateMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', pageMeta.title);
     updateMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', pageMeta.description);
 

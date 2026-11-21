@@ -38,7 +38,7 @@ export const ArticleDetailPage = () => {
     if (article) {
       const title = `${article.title} | Marinasi Pak ABIL Malang`;
       const description = article.metaDescription || article.excerpt;
-      const articleUrl = `https://foodfish-malang.vercel.app/artikel/${article.slug}`;
+      const articleUrl = `https://marinasi-malang-pakabil.vercel.app/artikel/${article.slug}`;
 
       document.title = title;
       window.scrollTo(0, 0);
@@ -57,10 +57,10 @@ export const ArticleDetailPage = () => {
       updateMetaTag('meta[property="og:title"]', 'property', 'og:title', title);
       updateMetaTag('meta[property="og:description"]', 'property', 'og:description', description);
       updateMetaTag('meta[property="og:url"]', 'property', 'og:url', articleUrl);
-      updateMetaTag('meta[property="og:image"]', 'property', 'og:image', `https://foodfish-malang.vercel.app${article.image}`);
+      updateMetaTag('meta[property="og:image"]', 'property', 'og:image', `https://marinasi-malang-pakabil.vercel.app${article.image}`);
       updateMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
       updateMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
-      updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', `https://foodfish-malang.vercel.app${article.image}`);
+      updateMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', `https://marinasi-malang-pakabil.vercel.app${article.image}`);
 
       const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
       canonicalLink.setAttribute('rel', 'canonical');
@@ -94,7 +94,7 @@ export const ArticleDetailPage = () => {
   const relatedArticles = getRelatedArticles(article.slug, article.category, 3);
   const relatedProduct = article.relatedProductSlug ? getProductBySlug(article.relatedProductSlug) : null;
 
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://foodfish-malang.vercel.app/artikel/${article.slug}`;
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://marinasi-malang-pakabil.vercel.app/artikel/${article.slug}`;
 
   const handleCopyLink = () => {
     if (navigator.clipboard) {
@@ -112,7 +112,7 @@ export const ArticleDetailPage = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": article.title,
-    "image": `https://foodfish-malang.vercel.app${article.image}`,
+    "image": `https://marinasi-malang-pakabil.vercel.app${article.image}`,
     "author": {
       "@type": "Organization",
       "name": "Marinasi Pak ABIL"
@@ -122,7 +122,7 @@ export const ArticleDetailPage = () => {
       "name": "Marinasi Pak ABIL",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://foodfish-malang.vercel.app/favicon.svg"
+        "url": "https://marinasi-malang-pakabil.vercel.app/favicon.svg"
       }
     },
     "description": article.metaDescription || article.excerpt,
@@ -226,7 +226,7 @@ export const ArticleDetailPage = () => {
             }}>
               <img
                 src={imageError ? '/images/tips-menggoreng-ikan.png' : article.image}
-                alt={article.title}
+                alt={`${article.title} – Panduan Ikan Marinasi Siap Masak Pak ABIL Malang`}
                 onError={() => setImageError(true)}
                 style={{
                   width: '100%',
@@ -266,9 +266,9 @@ export const ArticleDetailPage = () => {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>
                   <Sparkles size={20} />
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, margin: 0, color: 'var(--color-deep-navy)' }}>
+                  <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, color: 'var(--color-deep-navy)' }}>
                     Poin Kunci Panduan Ini
-                  </h3>
+                  </h2>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {article.keyTakeaways.map((point, idx) => (
@@ -327,6 +327,30 @@ export const ArticleDetailPage = () => {
                   )}
                 </section>
               ))}
+            </div>
+
+            {/* SILO Contextual Internal Linking Box */}
+            <div style={{
+              marginTop: '3rem',
+              padding: '1.75rem',
+              backgroundColor: 'var(--color-warm-cream)',
+              borderRadius: 'var(--radius-xl)',
+              border: '1.5px solid var(--color-border)',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem', color: 'var(--color-primary)' }}>
+                <ShoppingBag size={22} />
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, margin: 0, color: 'var(--color-deep-navy)' }}>
+                  Rekomendasi Bahan Masakan Siap Olah:
+                </h3>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
+                Ingin mempraktikkan tips memasak ini di rumah tanpa repot menyiangi sisik dan meracik bumbu? Dapatkan produk {relatedProduct ? (
+                  <Link to={`/produk/${relatedProduct.slug}`} style={{ color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'underline' }}>
+                    {relatedProduct.name}
+                  </Link>
+                ) : 'ikan marinasi pilihan'} berkualitas di <Link to="/produk" style={{ color: 'var(--color-ocean-blue)', fontWeight: 700, textDecoration: 'underline' }}>Katalog Ikan Marinasi Malang</Link>. Seluruh produk dimarinasi higienis menggunakan 100% rempah alami nusantara dan dikemas vacuum pack rapat yang aman disimpan di freezer.
+              </p>
             </div>
 
             {/* FAQs Section */}
@@ -469,7 +493,7 @@ export const ArticleDetailPage = () => {
                 <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
                   <img
                     src={relatedProduct.image}
-                    alt={relatedProduct.name}
+                    alt={`Beli ${relatedProduct.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem' }}>
