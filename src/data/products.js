@@ -21,8 +21,8 @@ export const PRODUCTS = [
     ingredients: "Ikan Gurame segar, kunyit segar, bawang putih, bawang merah, ketumbar, lengkuas, jahe, garam laut, serai, daun jeruk.",
     isFeatured: true,
     inStock: true,
-    image: "/images/gurame-bumbu-kuning.png",
-    alt: "Jual ikan gurame bumbu kuning rempah marinasi siap masak Malang - Pak ABIL",
+    image: "/images/gurame-bumbu-kuning-marinasi-pak-abil.png",
+    alt: "Gurame Bumbu Kuning Rempah - Ikan Marinasi Pak ABIL Malang",
     tags: ["Best Seller", "Siap Goreng", "Favorit Keluarga"]
   },
   {
@@ -41,8 +41,8 @@ export const PRODUCTS = [
     ingredients: "Ikan Nila segar, madu alami, kecap manis tradisional, cabai merah keriting, bawang putih, terasi bakar, ketumbar, jeruk nipis.",
     isFeatured: true,
     inStock: true,
-    image: "/images/nila-bakar-madu.png",
-    alt: "Ikan nila marinasi bakar madu khas Jimbaran siap masak Malang - Pak ABIL",
+    image: "/images/nila-bakar-madu-marinasi-pak-abil.png",
+    alt: "Nila Bakar Bumbu Madu Jimbaran - Ikan Marinasi Pak ABIL Malang",
     tags: ["Rekomendasi", "Aroma Bakar", "Praktis"]
   },
   {
@@ -61,8 +61,8 @@ export const PRODUCTS = [
     ingredients: "Ikan Lele segar, ketumbar sangrai, bawang putih, garam, kunyit, perasan jeruk nipis.",
     isFeatured: true,
     inStock: true,
-    image: "/images/lele-ketumbar.png",
-    alt: "Jual ikan lele bumbu marinasi ketumbar bawang siap goreng Malang - Pak ABIL",
+    image: "/images/lele-ketumbar-marinasi-pak-abil.png",
+    alt: "Lele Marinasi Ketumbar Bawang - Ikan Marinasi Pak ABIL Malang",
     tags: ["Super Crispy", "Menu Harian"]
   },
   {
@@ -81,8 +81,8 @@ export const PRODUCTS = [
     ingredients: "Fillet Ikan Dori murni, mentega, bawang putih cincang, sari lemon, peterseli, lada putih, garam himalaya.",
     isFeatured: true,
     inStock: true,
-    image: "/images/fillet-dori-garlic.png",
-    alt: "Fillet ikan dori marinasi garlic butter lemon tanpa duri siap masak Malang",
+    image: "/images/fillet-dori-garlic-marinasi-pak-abil.png",
+    alt: "Fillet Dori Garlic Butter Lemon - Ikan Marinasi Pak ABIL Malang",
     tags: ["Tanpa Duri", "Kids Friendly", "Tinggi Protein"]
   },
   {
@@ -101,8 +101,8 @@ export const PRODUCTS = [
     ingredients: "Ikan Bandeng segar cabut duri, kunyit, bawang putih, jahe, kemiri, daun salam, ketumbar, garam.",
     isFeatured: false,
     inStock: true,
-    image: "/images/bandeng-cabut-duri.png",
-    alt: "Ikan bandeng cabut duri bumbu marinasi kunyit siap masak Malang - Pak ABIL",
+    image: "/images/bandeng-cabut-duri-marinasi-pak-abil.png",
+    alt: "Bandeng Cabut Duri Bumbu Kunyit - Ikan Marinasi Pak ABIL Malang",
     tags: ["Bebas Duri", "Khas Nusantara"]
   },
   {
@@ -121,8 +121,8 @@ export const PRODUCTS = [
     ingredients: "Ikan Tongkol segar, cabai merah besar, cabai rawit, tomat segar, bawang merah, bawang putih, daun jeruk, minyak kelapa.",
     isFeatured: false,
     inStock: true,
-    image: "/images/tongkol-balado.png",
-    alt: "Ikan tongkol segar bumbu marinasi balado pedas siap masak Malang - Pak ABIL",
+    image: "/images/tongkol-balado-marinasi-pak-abil.png",
+    alt: "Tongkol Segar Bumbu Balado Pedas - Ikan Marinasi Pak ABIL Malang",
     tags: ["Pedas Mantap", "Lauk Favorit"]
   },
   {
@@ -141,8 +141,8 @@ export const PRODUCTS = [
     ingredients: "Udang Vaname segar, bawang putih cincang halus, mentega nabati, lada, garam laut, daun peterseli.",
     isFeatured: false,
     inStock: true,
-    image: "/images/udang-garlic-butter.png",
-    alt: "Seafood udang vaname bumbu marinasi garlic butter siap masak Malang",
+    image: "/images/udang-garlic-butter-marinasi-pak-abil.png",
+    alt: "Udang Kupas Vaname Garlic Butter - Ikan Marinasi Pak ABIL Malang",
     tags: ["Seafood Segar", "Siap Tumis"]
   },
   {
@@ -161,8 +161,8 @@ export const PRODUCTS = [
     ingredients: "Kombinasi ikan Gurame, Nila, dan Lele segar dengan racikan bumbu rempah alami Marinasi Pak ABIL.",
     isFeatured: true,
     inStock: true,
-    image: "/images/paket-keluarga.png",
-    alt: "Paket hemat aneka varian ikan marinasi siap masak keluarga Malang - Pak ABIL",
+    image: "/images/paket-keluarga-marinasi-pak-abil.png",
+    alt: "Paket Hemat Komplit 3 Varian - Ikan Marinasi Pak ABIL Malang",
     tags: ["Paket Hemat", "Stok Keluarga", "Terlaris"]
   },
   {
@@ -181,8 +181,8 @@ export const PRODUCTS = [
     ingredients: "Fillet Salmon Trout segar, saus teriyaki alami, kecap kedelai fermentasi, jahe parut, biji wijen sangrai, madu.",
     isFeatured: false,
     inStock: false,
-    image: "/images/salmon-teriyaki.png",
-    alt: "Fillet ikan salmon bumbu marinasi teriyaki siap masak Malang - Pak ABIL",
+    image: "/images/salmon-teriyaki-marinasi-pak-abil.png",
+    alt: "Salmon Trout Saus Teriyaki - Ikan Marinasi Pak ABIL Malang",
     tags: ["Stok Habis Sementara", "Omega-3", "Sehat"]
   }
 ];

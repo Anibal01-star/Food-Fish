@@ -12,75 +12,75 @@ if (!fs.existsSync(targetDir)) {
 
 const imagesToDownload = [
   {
-    name: 'hero-ikan-marinasi.png',
+    name: 'hero-ikan-marinasi-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=85&fm=png'
   },
   {
-    name: 'gurame-bumbu-kuning.png',
+    name: 'gurame-bumbu-kuning-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'nila-bakar-madu.png',
+    name: 'nila-bakar-madu-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'lele-ketumbar.png',
+    name: 'lele-ketumbar-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'fillet-dori-garlic.png',
+    name: 'fillet-dori-garlic-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1514944298352-f5f9f8e404e3?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'bandeng-cabut-duri.png',
+    name: 'bandeng-cabut-duri-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1544943910-4c1dc44a0b27?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'tongkol-balado.png',
+    name: 'tongkol-balado-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'udang-garlic-butter.png',
+    name: 'udang-garlic-butter-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'paket-keluarga.png',
+    name: 'paket-keluarga-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'salmon-teriyaki.png',
+    name: 'salmon-teriyaki-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1499125562588-29fb8a56b5d0?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'tips-menggoreng-ikan.png',
+    name: 'tips-menggoreng-ikan-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=800&q=85&fm=png'
   },
   {
-    name: 'simpan-freezer.png',
+    name: 'simpan-freezer-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1544943910-4c1dc44a0b27?auto=format&fit=crop&w=800&q=85&fm=png'
   },
   {
-    name: 'resep-sambal.png',
+    name: 'resep-sambal-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=85&fm=png'
   },
   {
-    name: 'dapur-persiapan.png',
+    name: 'dapur-persiapan-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'bumbu-rempah-nusantara.png',
+    name: 'bumbu-rempah-nusantara-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'kemasan-vacuum-pack.png',
+    name: 'kemasan-vacuum-pack-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1544943910-4c1dc44a0b27?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'ikan-bakar-teflon.png',
+    name: 'ikan-bakar-teflon-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=85&fm=png'
   },
   {
-    name: 'ikan-goreng-crispy.png',
+    name: 'ikan-goreng-crispy-marinasi-pak-abil.png',
     url: 'https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=900&q=85&fm=png'
   }
 ];

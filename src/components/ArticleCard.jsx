@@ -4,7 +4,7 @@ import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
 export const ArticleCard = ({ article, onReadMore }) => {
   const [imageError, setImageError] = useState(false);
-  const fallbackImage = "/images/tips-menggoreng-ikan.png";
+  const fallbackImage = "/images/tips-menggoreng-ikan-marinasi-pak-abil.png";
 
   return (
     <article className="product-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -14,6 +14,8 @@ export const ArticleCard = ({ article, onReadMore }) => {
           alt={`${article.title} – Panduan Ikan Marinasi Siap Masak Pak ABIL Malang`}
           className="product-image"
           loading="lazy"
+          width="360"
+          height="216"
           onError={() => setImageError(true)}
         />
         <div className="product-badge-list">

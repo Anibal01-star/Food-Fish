@@ -62,6 +62,10 @@ export const HomePage = () => {
     {
       q: "Bagaimana cara memesan melalui website dan WhatsApp?",
       a: "Anda cukup memilih ikan marinasi yang diinginkan di halaman katalog, masukkan ke keranjang belanja, lalu klik tombol 'Konfirmasi via WhatsApp' pada saat checkout untuk terhubung langsung dengan penjual."
+    },
+    {
+      q: "Bagaimana cara menyajikan dan memasak ikan marinasi ini di rumah?",
+      a: "Lakukan proses thawing (rendam kemasan vacuum tertutup rapat di air biasa selama 20-30 menit hingga lentur). Kemudian goreng dalam minyak panas bersuhu sedang selama 8-10 menit hingga renyah keemasan, atau panggang di wajan teflon selama 4-5 menit per sisi. Praktis tanpa perlu menambah garam atau meracik bumbu lagi!"
     }
   ];
 
@@ -123,8 +127,8 @@ export const HomePage = () => {
           <div className="hero-visual">
             <div className="hero-image-card">
               <img
-                src="/images/hero-ikan-marinasi.png"
-                alt="Jual ikan marinasi Malang siap masak - aneka olahan ikan bumbu marinasi rempah Pak ABIL"
+                src="/images/hero-ikan-marinasi-marinasi-pak-abil.png"
+                alt="Ikan Marinasi Pak ABIL – Aneka Ikan Bumbu Marinasi Siap Masak Malang"
                 className="hero-image"
                 loading="eager"
                 fetchPriority="high"

@@ -46,13 +46,13 @@ const routeMeta = {
     canonical: 'https://marinasi-malang-pakabil.vercel.app/galeri'
   },
   '/tentang-kami': {
-    title: 'Tentang Kami – Mengenal Marinasi Pak ABIL Malang',
-    description: 'Kenali komitmen kualitas dan proses Marinasi Pak ABIL dalam menyajikan ikan mentah berbumbu marinasi siap masak higienis untuk keluarga di Malang Raya.',
+    title: 'Tentang Kami – Ikan Marinasi Segar Malang | Marinasi Pak ABIL',
+    description: 'Kenali Marinasi Pak ABIL, penyedia aneka ikan bumbu marinasi siap masak di Malang Raya. Higienis, kaya rempah nusantara alami, dan praktis tanpa repot.',
     canonical: 'https://marinasi-malang-pakabil.vercel.app/tentang-kami'
   },
   '/artikel': {
-    title: 'Artikel & Panduan Memasak Ikan Marinasi | Marinasi Pak ABIL Malang',
-    description: 'Baca panduan memasak ikan marinasi anti lengket, tips food prep freezer, dan resep bumbu marinasi dari Marinasi Pak ABIL Malang.',
+    title: 'Panduan Memasak & Resep Ikan Marinasi | Marinasi Pak ABIL',
+    description: 'Kumpulan tips memasak dan resep ikan bumbu marinasi dari Marinasi Pak ABIL. Panduan menggoreng anti lengket, cara simpan di freezer, dan olahan praktis.',
     canonical: 'https://marinasi-malang-pakabil.vercel.app/artikel'
   },
   '/kontak': {

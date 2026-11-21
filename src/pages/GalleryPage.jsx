@@ -142,6 +142,8 @@ export const GalleryPage = () => {
                   src={image.src}
                   alt={image.alt || `${image.title} – Marinasi Pak ABIL Malang`}
                   loading="lazy"
+                  width="320"
+                  height="210"
                   style={{
                     position: 'absolute',
                     top: 0,

@@ -33,7 +33,7 @@ export const ProductDetailPage = () => {
   const [isAdding, setIsAdding] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const fallbackImage = "/images/gurame-bumbu-kuning.png";
+  const fallbackImage = "/images/gurame-bumbu-kuning-marinasi-pak-abil.png";
 
   // Dynamic SEO title & meta description update
   useEffect(() => {
@@ -113,28 +113,61 @@ export const ProductDetailPage = () => {
   const directWaMessage = buildSingleProductWhatsAppMessage(product, quantity);
   const directWaUrl = createWhatsAppUrl(directWaMessage);
 
-  // Structured Data JSON-LD
+  // Structured Data JSON-LD (Product & BreadcrumbList Schema)
   const productSchema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": product.name,
-    "image": `https://marinasi-malang-pakabil.vercel.app${product.image}`,
-    "description": product.description,
-    "brand": {
-      "@type": "Brand",
-      "name": "Marinasi Pak ABIL"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": `https://marinasi-malang-pakabil.vercel.app/produk/${product.slug}`,
-      "priceCurrency": "IDR",
-      "price": product.price,
-      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    }
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": product.name,
+        "image": `https://marinasi-malang-pakabil.vercel.app${product.image}`,
+        "description": product.description,
+        "brand": {
+          "@type": "Brand",
+          "name": "Marinasi Pak ABIL"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": `https://marinasi-malang-pakabil.vercel.app/produk/${product.slug}`,
+          "priceCurrency": "IDR",
+          "price": product.price,
+          "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://marinasi-malang-pakabil.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Katalog Ikan Marinasi",
+            "item": "https://marinasi-malang-pakabil.vercel.app/produk"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": product.categoryName,
+            "item": `https://marinasi-malang-pakabil.vercel.app/produk?kategori=${product.category}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": product.name,
+            "item": `https://marinasi-malang-pakabil.vercel.app/produk/${product.slug}`
+          }
+        ]
+      }
+    ]
   };
 
-  const productAlt = product.alt || `Jual ${product.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`;
+  const productAlt = product.alt || `${product.name} – Ikan Marinasi Pak ABIL Malang`;
 
   return (
     <div className="product-detail-page">

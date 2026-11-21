@@ -9,12 +9,12 @@ export const ArticlesPage = () => {
   const [activeArticle, setActiveArticle] = useState(null);
 
   React.useEffect(() => {
-    document.title = "Artikel & Panduan Memasak Ikan Marinasi | Marinasi Pak ABIL Malang";
+    document.title = "Panduan Memasak & Resep Ikan Marinasi | Marinasi Pak ABIL";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Baca panduan memasak ikan marinasi anti lengket, tips food prep freezer, resep sambal, dan trik memanggang di teflon dari Marinasi Pak ABIL.'
+        'Kumpulan tips memasak dan resep ikan bumbu marinasi dari Marinasi Pak ABIL. Panduan menggoreng anti lengket, cara simpan di freezer, dan olahan praktis.'
       );
     }
     window.scrollTo(0, 0);

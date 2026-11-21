@@ -10,7 +10,7 @@ export const ProductCard = ({ product }) => {
   const [imageError, setImageError] = useState(false);
 
   // Fallback placeholder image jika link gambar eksternal gagal dimuat
-  const fallbackImage = "/images/gurame-bumbu-kuning.png";
+  const fallbackImage = "/images/gurame-bumbu-kuning-marinasi-pak-abil.png";
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ export const ProductCard = ({ product }) => {
     }, 600);
   };
 
-  const imageAlt = product.alt || `Jual ${product.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`;
+  const imageAlt = product.alt || `${product.name} – Ikan Marinasi Pak ABIL Malang`;
 
   return (
     <article className="product-card">

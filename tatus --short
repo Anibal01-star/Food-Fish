@@ -1,0 +1,54 @@
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/download-images.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/fix-missing-pngs.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/App.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/ArticleCard.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/ProductCard.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/data/articles.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/data/gallery.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/data/products.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/AboutPage.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/ArticleDetailPage.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/ArticlesPage.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/GalleryPage.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/HomePage.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/ProductDetailPage.jsx', LF will be replaced by CRLF the next time Git touches it
+ index.html                               |  37 [32m+++++++++++[m[31m--[m
+ public/favicon.svg                       |  23 [31m---------[m
+ public/icons.svg                         |  24 [31m---------[m
+ public/images/bandeng-cabut-duri.png     | Bin [31m884755[m -> [32m0[m bytes
+ public/images/bumbu-rempah-nusantara.png | Bin [31m1010382[m -> [32m0[m bytes
+ public/images/dapur-persiapan.png        | Bin [31m884755[m -> [32m0[m bytes
+ public/images/fillet-dori-garlic.png     | Bin [31m835254[m -> [32m0[m bytes
+ public/images/gurame-bumbu-kuning.png    | Bin [31m884755[m -> [32m0[m bytes
+ public/images/hero-ikan-marinasi.png     | Bin [31m1023828[m -> [32m0[m bytes
+ public/images/ikan-bakar-teflon.png      | Bin [31m599014[m -> [32m0[m bytes
+ public/images/ikan-goreng-crispy.png     | Bin [31m633074[m -> [32m0[m bytes
+ public/images/kemasan-vacuum-pack.png    | Bin [31m1010382[m -> [32m0[m bytes
+ public/images/lele-ketumbar.png          | Bin [31m633074[m -> [32m0[m bytes
+ public/images/nila-bakar-madu.png        | Bin [31m599014[m -> [32m0[m bytes
+ public/images/paket-keluarga.png         | Bin [31m117475[m -> [32m0[m bytes
+ public/images/resep-sambal.png           | Bin [31m738495[m -> [32m0[m bytes
+ public/images/salmon-teriyaki.png        | Bin [31m599014[m -> [32m0[m bytes
+ public/images/simpan-freezer.png         | Bin [31m117475[m -> [32m0[m bytes
+ public/images/tips-menggoreng-ikan.png   | Bin [31m509481[m -> [32m0[m bytes
+ public/images/tongkol-balado.png         | Bin [31m921745[m -> [32m0[m bytes
+ public/images/udang-garlic-butter.png    | Bin [31m835254[m -> [32m0[m bytes
+ scripts/download-images.js               |  36 [32m++++++[m[31m-------[m
+ scripts/fix-missing-pngs.js              |  20 [32m+++[m[31m----[m
+ src/App.jsx                              |   8 [32m+[m[31m--[m
+ src/assets/hero.png                      | Bin [31m13057[m -> [32m0[m bytes
+ src/assets/react.svg                     |   1 [31m-[m
+ src/assets/vite.svg                      |   1 [31m-[m
+ src/components/ArticleCard.jsx           |   4 [32m+[m[31m-[m
+ src/components/ProductCard.jsx           |   4 [32m+[m[31m-[m
+ src/data/articles.js                     |  32 [32m++++++[m[31m------[m
+ src/data/gallery.js                      |  60 [32m++++++++++[m[31m-----------[m
+ src/data/products.js                     |  36 [32m++++++[m[31m-------[m
+ src/pages/AboutPage.jsx                  |   8 [32m+[m[31m--[m
+ src/pages/ArticleDetailPage.jsx          |  86 [32m+++++++++++++++++++++++[m[31m--------[m
+ src/pages/ArticlesPage.jsx               |   4 [32m+[m[31m-[m
+ src/pages/GalleryPage.jsx                |   2 [32m+[m
+ src/pages/HomePage.jsx                   |   8 [32m++[m[31m-[m
+ src/pages/ProductDetailPage.jsx          |  73 [32m+++++++++++++++++++[m[31m-------[m
+ 38 files changed, 265 insertions(+), 202 deletions(-)

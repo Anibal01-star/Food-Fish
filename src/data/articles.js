@@ -1,4 +1,4 @@
-﻿/**
+/**
  * DATA 10 ARTIKEL & PANDUAN LENGKAP Marinasi Pak ABIL
  * Setiap artikel memiliki data komprehensif untuk halaman tunggal (One-Page Article).
  * Seluruh foto menggunakan aset lokal /images/*.png.
@@ -15,7 +15,7 @@ export const ARTICLES = [
     date: "18 Oktober 2026",
     readTime: "4 menit baca",
     author: "Tim Dapur Marinasi Pak ABIL",
-    image: "/images/tips-menggoreng-ikan.png",
+    image: "/images/tips-menggoreng-ikan-marinasi-pak-abil.png",
     tags: ["Tips Menggoreng", "Anti Lengket", "Ikan Garing", "Trik Dapur"],
     relatedProductSlug: "gurame-bumbu-kuning-rempah",
     keyTakeaways: [
@@ -72,9 +72,9 @@ export const ARTICLES = [
     date: "16 Oktober 2026",
     readTime: "3 menit baca",
     author: "Tim Quality Marinasi Pak ABIL",
-    image: "/images/simpan-freezer.png",
+    image: "/images/simpan-freezer-marinasi-pak-abil.png",
     tags: ["Food Prep", "Penyimpanan", "Freezer", "Tips Higienis"],
-    relatedProductSlug: "paket-hemat-keluarga-marinasi",
+    relatedProductSlug: "paket-komplit-keluarga-hemat-3-varian",
     keyTakeaways: [
       "Jaga kemasan tetap kedap udara (vacuum pack) untuk mencegah dehidrasi es.",
       "Atur freezer pada suhu stabil minimal -18Â°C.",
@@ -124,7 +124,7 @@ export const ARTICLES = [
     date: "15 Oktober 2026",
     readTime: "5 menit baca",
     author: "Dapur Rasa Nusantara",
-    image: "/images/resep-sambal.png",
+    image: "/images/resep-sambal-marinasi-pak-abil.png",
     tags: ["Resep Sambal", "Pendamping Ikan", "Kuliner Pedas", "Sambal Segar"],
     relatedProductSlug: "nila-marinasi-bakar-madu-jimbaran",
     keyTakeaways: [
@@ -170,7 +170,7 @@ export const ARTICLES = [
     date: "14 Oktober 2026",
     readTime: "4 menit baca",
     author: "Chef Dapur Marinasi Pak ABIL",
-    image: "/images/ikan-bakar-teflon.png",
+    image: "/images/ikan-bakar-teflon-marinasi-pak-abil.png",
     tags: ["Ikan Bakar Teflon", "Anti Gosong", "Tips Memanggang", "Menu Rumahan"],
     relatedProductSlug: "nila-marinasi-bakar-madu-jimbaran",
     keyTakeaways: [
@@ -221,9 +221,9 @@ export const ARTICLES = [
     date: "12 Oktober 2026",
     readTime: "5 menit baca",
     author: "Nutrisionis Marinasi Pak ABIL",
-    image: "/images/salmon-teriyaki.png",
+    image: "/images/salmon-teriyaki-marinasi-pak-abil.png",
     tags: ["Manfaat Ikan", "Omega 3", "Gizi Anak", "Pola Hidup Sehat"],
-    relatedProductSlug: "salmon-fillet-teriyaki-glaze",
+    relatedProductSlug: "salmon-trout-marinasi-teriyaki",
     keyTakeaways: [
       "Kandungan DHA dan EPA dalam ikan krusial untuk kecerdasan memori dan penglihatan anak.",
       "Asam lemak tak jenuh ganda melindungi kesehatan pembuluh darah dan jantung orang dewasa.",
@@ -273,9 +273,9 @@ export const ARTICLES = [
     date: "10 Oktober 2026",
     readTime: "4 menit baca",
     author: "Dapur Cepat Mantap",
-    image: "/images/fillet-dori-garlic.png",
+    image: "/images/fillet-dori-garlic-marinasi-pak-abil.png",
     tags: ["Dori Garlic Butter", "Menu Bekal", "Tanpa Duri", "Masak Cepat"],
-    relatedProductSlug: "fillet-dori-garlic-herb",
+    relatedProductSlug: "fillet-dori-bumbu-garlic-butter-lemon",
     keyTakeaways: [
       "Fillet dori Marinasi Pak ABIL sudah bersih tanpa duri dan dimarinasi bawang putih gurih.",
       "Proses masak hanya memerlukan waktu 3-4 menit per sisi agar daging tetap juicy.",
@@ -324,7 +324,7 @@ export const ARTICLES = [
     date: "8 Oktober 2026",
     readTime: "4 menit baca",
     author: "Chef Tradisional Marinasi Pak ABIL",
-    image: "/images/gurame-bumbu-kuning.png",
+    image: "/images/gurame-bumbu-kuning-marinasi-pak-abil.png",
     tags: ["Gurame Bumbu Kuning", "Hilangkan Bau Tanah", "Bumbu Rempah", "Masakan Tradisional"],
     relatedProductSlug: "gurame-bumbu-kuning-rempah",
     keyTakeaways: [
@@ -375,7 +375,7 @@ export const ARTICLES = [
     date: "6 Oktober 2026",
     readTime: "5 menit baca",
     author: "Mom FoodPrep Specialist",
-    image: "/images/dapur-persiapan.png",
+    image: "/images/dapur-persiapan-marinasi-pak-abil.png",
     tags: ["Food Prep Ibu Bekerja", "Manajemen Waktu", "Hemat Belanja", "Stok Lauk"],
     relatedProductSlug: "lele-marinasi-ketumbar-bawang",
     keyTakeaways: [
@@ -426,9 +426,9 @@ export const ARTICLES = [
     date: "4 Oktober 2026",
     readTime: "4 menit baca",
     author: "Tim Riset Konsumen Marinasi Pak ABIL",
-    image: "/images/kemasan-vacuum-pack.png",
+    image: "/images/kemasan-vacuum-pack-marinasi-pak-abil.png",
     tags: ["Ikan Marinasi vs Segar", "Hemat Waktu", "Zero Waste", "Higienitas Makanan"],
-    relatedProductSlug: "paket-hemat-keluarga-marinasi",
+    relatedProductSlug: "paket-komplit-keluarga-hemat-3-varian",
     keyTakeaways: [
       "Ikan segar pasar mengalami penyusutan bobot 25-35% setelah sisik, insang, dan jeroan dibuang.",
       "Membeli aneka rimpang bumbu terpisah sering berujung sisa bumbu busuk di kulkas.",
@@ -477,9 +477,9 @@ export const ARTICLES = [
     date: "2 Oktober 2026",
     readTime: "4 menit baca",
     author: "Dapur Rasa Nusantara",
-    image: "/images/bandeng-cabut-duri.png",
+    image: "/images/bandeng-cabut-duri-marinasi-pak-abil.png",
     tags: ["Bandeng Cabut Duri", "Bebas Duri", "Bandeng Bakar", "Resep Keluarga"],
-    relatedProductSlug: "bandeng-cabut-duri-semarang",
+    relatedProductSlug: "bandeng-cabut-duri-marinasi-kunyit",
     keyTakeaways: [
       "Bandeng Marinasi Pak ABIL telah melalui proses pencabutan duri manual satu per satu secara teliti.",
       "Karakteristik lemak perut bandeng memberikan sensasi gurih lumer yang sangat kaya rasa.",

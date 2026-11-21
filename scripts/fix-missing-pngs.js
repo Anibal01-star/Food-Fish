@@ -8,24 +8,24 @@ const targetDir = path.resolve(__dirname, '../public/images');
 
 const missingFallbacks = [
   {
-    name: 'fillet-dori-garlic.png',
-    fallbackSource: 'udang-garlic-butter.png'
+    name: 'fillet-dori-garlic-marinasi-pak-abil.png',
+    fallbackSource: 'udang-garlic-butter-marinasi-pak-abil.png'
   },
   {
-    name: 'bandeng-cabut-duri.png',
-    fallbackSource: 'gurame-bumbu-kuning.png'
+    name: 'bandeng-cabut-duri-marinasi-pak-abil.png',
+    fallbackSource: 'gurame-bumbu-kuning-marinasi-pak-abil.png'
   },
   {
-    name: 'salmon-teriyaki.png',
-    fallbackSource: 'nila-bakar-madu.png'
+    name: 'salmon-teriyaki-marinasi-pak-abil.png',
+    fallbackSource: 'nila-bakar-madu-marinasi-pak-abil.png'
   },
   {
-    name: 'simpan-freezer.png',
-    fallbackSource: 'paket-keluarga.png'
+    name: 'simpan-freezer-marinasi-pak-abil.png',
+    fallbackSource: 'paket-keluarga-marinasi-pak-abil.png'
   },
   {
-    name: 'kemasan-vacuum-pack.png',
-    fallbackSource: 'bumbu-rempah-nusantara.png'
+    name: 'kemasan-vacuum-pack-marinasi-pak-abil.png',
+    fallbackSource: 'bumbu-rempah-nusantara-marinasi-pak-abil.png'
   }
 ];
 

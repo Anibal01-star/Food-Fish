@@ -17,12 +17,12 @@ import { BUSINESS_INFO } from '../config/whatsapp.js';
 
 export const AboutPage = () => {
   useEffect(() => {
-    document.title = "Tentang Kami – Mengenal Marinasi Pak ABIL Malang";
+    document.title = "Tentang Kami – Ikan Marinasi Segar Malang | Marinasi Pak ABIL";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'Mengenal Marinasi Pak ABIL, penyedia ikan mentah berbumbu marinasi rempah siap masak di Malang Raya. Praktis, higienis, dan lezat untuk santapan keluarga.'
+        'Kenali Marinasi Pak ABIL, penyedia aneka ikan bumbu marinasi siap masak di Malang Raya. Higienis, kaya rempah nusantara alami, dan praktis tanpa repot.'
       );
     }
     window.scrollTo(0, 0);
@@ -90,8 +90,8 @@ export const AboutPage = () => {
                 border: '1px solid var(--color-border)'
               }}>
                 <img
-                  src="/images/dapur-persiapan.png"
-                  alt="Proses persiapan dan bumbu ikan marinasi higienis di dapur Marinasi Pak ABIL Malang"
+                  src="/images/dapur-persiapan-marinasi-pak-abil.png"
+                  alt="Dapur Persiapan Higienis – Ikan Marinasi Pak ABIL Malang"
                   width="480"
                   height="420"
                   style={{ width: '100%', height: '420px', objectFit: 'cover' }}

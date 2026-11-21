@@ -110,30 +110,68 @@ export const ArticleDetailPage = () => {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": article.title,
-    "image": `https://marinasi-malang-pakabil.vercel.app${article.image}`,
-    "author": {
-      "@type": "Organization",
-      "name": "Marinasi Pak ABIL"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Marinasi Pak ABIL",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://marinasi-malang-pakabil.vercel.app/favicon.svg"
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": article.title,
+        "image": `https://marinasi-malang-pakabil.vercel.app${article.image}`,
+        "author": {
+          "@type": "Organization",
+          "name": "Marinasi Pak ABIL"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Marinasi Pak ABIL",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://marinasi-malang-pakabil.vercel.app/favicon-marinasi-pak-abil.svg"
+          }
+        },
+        "description": article.metaDescription || article.excerpt,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": currentUrl
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://marinasi-malang-pakabil.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Artikel & Panduan",
+            "item": "https://marinasi-malang-pakabil.vercel.app/artikel"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": article.category,
+            "item": "https://marinasi-malang-pakabil.vercel.app/artikel"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": article.title,
+            "item": currentUrl
+          }
+        ]
       }
-    },
-    "description": article.metaDescription || article.excerpt,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": currentUrl
-    }
+    ]
   };
 
   return (
     <div className="article-detail-page" style={{ backgroundColor: '#FAFAFA', minHeight: '100vh', paddingBottom: '5rem' }}>
+      {/* Inject Structured Data for Googlebot (Article & BreadcrumbList) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Breadcrumb Header */}
       <div style={{ backgroundColor: 'var(--color-warm-cream)', borderBottom: '1px solid var(--color-border)', padding: '1.25rem 1.5rem' }}>
         <div className="section-container">
@@ -225,9 +263,13 @@ export const ArticleDetailPage = () => {
               border: '1px solid var(--color-border)'
             }}>
               <img
-                src={imageError ? '/images/tips-menggoreng-ikan.png' : article.image}
-                alt={`${article.title} – Panduan Ikan Marinasi Siap Masak Pak ABIL Malang`}
+                src={imageError ? '/images/tips-menggoreng-ikan-marinasi-pak-abil.png' : article.image}
+                alt={`${article.title} – Ikan Marinasi Pak ABIL Malang`}
                 onError={() => setImageError(true)}
+                width="800"
+                height="440"
+                loading="eager"
+                fetchPriority="high"
                 style={{
                   width: '100%',
                   maxHeight: '440px',
@@ -493,7 +535,7 @@ export const ArticleDetailPage = () => {
                 <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
                   <img
                     src={relatedProduct.image}
-                    alt={`Beli ${relatedProduct.name} – Ikan Marinasi Siap Masak Malang Pak ABIL`}
+                    alt={`${relatedProduct.name} – Ikan Marinasi Pak ABIL Malang`}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem' }}>
